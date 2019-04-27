@@ -15,7 +15,7 @@
    <children>
       <BorderPane fx:id="borderPane">
          <left>
-            <VBox prefHeight="570.0" prefWidth="374.0" style="-fx-background-color: silver;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="570.0" prefWidth="374.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
                <children>
                   <Label text="បណ្ណាល័យខ្ញុំ">
                      <font>
@@ -269,6 +269,9 @@
                </children>
             </VBox>
          </left>
+         <top>
+            <Separator prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </top>
       </BorderPane>
    </children>
 </StackPane>

@@ -5,12 +5,16 @@
  */
 package khmerlibrary.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 /**
@@ -32,9 +36,17 @@ public class MainFormController implements Initializable {
     }
 
     @FXML
-    private void registerClick(MouseEvent event) {
-        System.out.println("You cicked register.");
-        borderPane.setCenter(new Button("Register"));
+    private void registerClick(MouseEvent event) throws IOException {
+//        AnchorPane p1 = new AnchorPane();
+//
+//        borderPane.setMargin(p1, new javafx.geometry.Insets(-5, 0, 0, 0));
+//
+//        p1.setStyle("-fx-background-color:red");
+//
+//        borderPane.setCenter(p1);
+        Parent registerMember = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/Register.fxml"));
+        borderPane.setCenter(registerMember);
+
     }
 
     @FXML
