@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.MainFormController">
    <children>
-      <BorderPane>
+      <BorderPane fx:id="borderPane">
          <left>
             <VBox prefHeight="570.0" prefWidth="374.0" style="-fx-background-color: silver;" BorderPane.alignment="CENTER">
                <children>
@@ -25,7 +25,7 @@
                         <Insets left="50.0" />
                      </VBox.margin>
                   </Label>
-                  <HBox prefHeight="21.0" prefWidth="233.0" style="-fx-background-color: TEAL; -fx-background-radius: 40;">
+                  <HBox onMouseClicked="#registerClick" prefHeight="21.0" prefWidth="233.0" style="-fx-background-color: TEAL; -fx-background-radius: 40;">
                      <children>
                         <MaterialDesignIconView fill="WHITE" glyphName="DELETE" size="25">
                            <HBox.margin>
@@ -50,7 +50,7 @@
                   </HBox>
                   <VBox prefHeight="38.0" prefWidth="221.0" style="-fx-background-color: ORANGE; -fx-background-radius: 40;">
                      <children>
-                        <HBox prefHeight="22.0" prefWidth="195.0">
+                        <HBox onMouseClicked="#issueBookClick" prefHeight="22.0" prefWidth="195.0">
                            <children>
                               <MaterialDesignIconView fill="WHITE" glyphName="DELETE" size="25">
                                  <HBox.margin>
@@ -78,7 +78,7 @@
                               <Insets left="60.0" right="10.0" />
                            </VBox.margin>
                         </Separator>
-                        <HBox prefHeight="22.0" prefWidth="195.0">
+                        <HBox onMouseClicked="#returBookClick" prefHeight="22.0" prefWidth="195.0">
                            <children>
                               <MaterialDesignIconView fill="WHITE" glyphName="HOME" size="25">
                                  <HBox.margin>
