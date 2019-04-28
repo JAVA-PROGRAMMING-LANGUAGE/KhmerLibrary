@@ -50,7 +50,7 @@
                               <Insets left="122.0" right="55.0" />
                            </padding>
                         </Separator>
-                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text=" ឱ្យខ្ចីសៀវភៅ" textFill="#616161">
+                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#issueBookClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text=" ឱ្យខ្ចីសៀវភៅ" textFill="#616161">
                            <font>
                               <Font name="Kh System" size="16.0" />
                            </font>
@@ -69,7 +69,7 @@
                               <Insets left="122.0" right="55.0" />
                            </padding>
                         </Separator>
-                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="56.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text=" សងសៀវភៅ" textFill="#616161">
+                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#returnBookClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text=" សងសៀវភៅ" textFill="#616161">
                            <font>
                               <Font name="Kh System" size="16.0" />
                            </font>
@@ -107,7 +107,7 @@
                               <Insets left="122.0" right="55.0" />
                            </padding>
                         </Separator>
-                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="174.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="បន្ថែមសម្ភារ" textFill="#616161">
+                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#addMaterialClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="បន្ថែមសម្ភារ" textFill="#616161">
                            <font>
                               <Font name="Kh System" size="16.0" />
                            </font>
@@ -126,7 +126,7 @@
                               <Insets left="122.0" right="55.0" />
                            </padding>
                         </Separator>
-                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="បង្ហាញស្ថិតិ" textFill="#616161">
+                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#viewStatisticClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="បង្ហាញស្ថិតិ" textFill="#616161">
                            <font>
                               <Font name="Kh System" size="16.0" />
                            </font>

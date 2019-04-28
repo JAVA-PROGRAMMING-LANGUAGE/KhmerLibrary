@@ -14,6 +14,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
@@ -22,7 +23,7 @@ import javafx.scene.layout.VBox;
  *
  * @author SRUN VANNARA
  */
-public class RegisterController implements Initializable {
+public class AddBookController implements Initializable {
 
     @FXML
     private VBox vbRegisterMember;
@@ -31,47 +32,39 @@ public class RegisterController implements Initializable {
     @FXML
     private TextField txtId;
     @FXML
-    private TextField txtName;
+    private TextField txtTitle;
     @FXML
-    private TextField txtLatin;
+    private TextField txtSubTitle;
     @FXML
-    private ComboBox<?> cboGender;
+    private ComboBox<?> cboCategory;
     @FXML
-    private TextField txtBirth;
+    private TextField txtAuthor;
     @FXML
-    private TextField txtVillage;
+    private TextField txtPrintYear;
     @FXML
-    private TextField txtCommune;
+    private TextField txtNumBook;
     @FXML
-    private TextField txtDistrict;
-    @FXML
-    private TextField txtProvince;
-    @FXML
-    private TextField txtPhone;
+    private TextField txtOther;
     @FXML
     private Button btnSave;
     @FXML
-    private TableView<?> tblMember;
+    private TableView<?> tblBook;
     @FXML
     private TableColumn<?, ?> cId;
     @FXML
-    private TableColumn<?, ?> cName;
+    private TableColumn<?, ?> cTitle;
     @FXML
-    private TableColumn<?, ?> cLatin;
+    private TableColumn<?, ?> cSubTitle;
     @FXML
-    private TableColumn<?, ?> cGender;
+    private TableColumn<?, ?> cCategory;
     @FXML
-    private TableColumn<?, ?> cBirth;
+    private TableColumn<?, ?> cAuthor;
     @FXML
-    private TableColumn<?, ?> cVillage;
+    private TableColumn<?, ?> cPrintYear;
     @FXML
-    private TableColumn<?, ?> cCommune;
+    private TableColumn<?, ?> cBookNum;
     @FXML
-    private TableColumn<?, ?> cDistrict;
-    @FXML
-    private TableColumn<?, ?> cProvince;
-    @FXML
-    private TableColumn<?, ?> cPhone;
+    private TableColumn<?, ?> cOther;
 
     /**
      * Initializes the controller class.
@@ -79,6 +72,10 @@ public class RegisterController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    @FXML
+    private void idTextChange(KeyEvent event) {
     }
 
     @FXML

@@ -3,18 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package khmerlibrary.view;
+package khmerlibrary.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
@@ -23,46 +21,34 @@ import javafx.scene.layout.VBox;
  *
  * @author SRUN VANNARA
  */
-public class RegisterController implements Initializable {
+public class AddMaterialController implements Initializable {
 
     @FXML
     private VBox vbRegisterMember;
     @FXML
-    private TextField txtSearch;
+    private TextField txtName;
     @FXML
-    private TextField txtId;
+    private TextField txtPrice;
     @FXML
-    private TextField txtTitle;
+    private TextField txtNum;
     @FXML
-    private TextField txtSubTitle;
-    @FXML
-    private ComboBox<?> cboCategory;
-    @FXML
-    private TextField txtAuthor;
-    @FXML
-    private TextField txtPrintYear;
-    @FXML
-    private TextField txtNumBook;
+    private TextField txtDonate;
     @FXML
     private TextField txtOther;
     @FXML
     private Button btnSave;
     @FXML
-    private TableView<?> tblBook;
+    private TableView<?> tblMaterial;
     @FXML
     private TableColumn<?, ?> cId;
     @FXML
-    private TableColumn<?, ?> cTitle;
+    private TableColumn<?, ?> cName;
     @FXML
-    private TableColumn<?, ?> cSubTitle;
+    private TableColumn<?, ?> cPrice;
     @FXML
-    private TableColumn<?, ?> cCategory;
+    private TableColumn<?, ?> cNum;
     @FXML
-    private TableColumn<?, ?> cAuthor;
-    @FXML
-    private TableColumn<?, ?> cPrintYear;
-    @FXML
-    private TableColumn<?, ?> cBookNum;
+    private TableColumn<?, ?> cDonate;
     @FXML
     private TableColumn<?, ?> cOther;
 
@@ -75,10 +61,6 @@ public class RegisterController implements Initializable {
     }
 
     @FXML
-    private void idTextChange(KeyEvent event) {
-    }
-
-    @FXML
     private void clickSave(MouseEvent event) {
     }
 
@@ -88,14 +70,6 @@ public class RegisterController implements Initializable {
 
     @FXML
     private void clickDelete(MouseEvent event) {
-    }
-
-    @FXML
-    private void clickClearSearch(MouseEvent event) {
-    }
-
-    @FXML
-    private void clickSearch(MouseEvent event) {
     }
 
 }

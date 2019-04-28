@@ -6,8 +6,12 @@
 package khmerlibrary.controller;
 
 import animatefx.animation.FadeIn;
+import animatefx.animation.FadeInUp;
 import animatefx.animation.SlideInDown;
+import animatefx.animation.SlideInLeft;
+import animatefx.animation.SlideInRight;
 import animatefx.animation.SlideInUp;
+import animatefx.animation.ZoomIn;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -35,7 +39,7 @@ public class MainController implements Initializable {
     @FXML
     private BorderPane borderPane;
 
-    Parent registerPane, addBookPane;
+    Parent registerPane, addBookPane, issueBookPane, retunBookPane, addMaterialPane;
     /**
      * Initializes the controller class.
      */
@@ -44,6 +48,9 @@ public class MainController implements Initializable {
         try {
             registerPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/Register.fxml"));
             addBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/AddBook.fxml"));
+            issueBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/IssueBook.fxml"));
+            retunBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/ReturnBook.fxml"));
+            addMaterialPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/AddMaterial.fxml"));
         } catch (IOException ex) {
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -60,6 +67,28 @@ public class MainController implements Initializable {
     private void addBookClick(MouseEvent event) {
         borderPane.setCenter(addBookPane);
         new SlideInUp(addBookPane).play();
+    }
+
+    @FXML
+    private void issueBookClick(MouseEvent event) {
+        borderPane.setCenter(issueBookPane);
+        new ZoomIn(issueBookPane).play();
+    }
+
+    @FXML
+    private void returnBookClick(MouseEvent event) {
+        borderPane.setCenter(retunBookPane);
+        new SlideInRight(retunBookPane).play();
+    }
+
+    @FXML
+    private void addMaterialClick(MouseEvent event) {
+        borderPane.setCenter(addMaterialPane);
+        new FadeInUp(addMaterialPane).play();
+    }
+
+    @FXML
+    private void viewStatisticClick(MouseEvent event) {
     }
 
 }

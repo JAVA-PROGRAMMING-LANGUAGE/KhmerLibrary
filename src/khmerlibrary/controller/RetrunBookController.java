@@ -22,38 +22,16 @@ import javafx.scene.layout.VBox;
  *
  * @author SRUN VANNARA
  */
-public class RegisterController implements Initializable {
+public class RetrunBookController implements Initializable {
 
     @FXML
     private VBox vbRegisterMember;
     @FXML
-    private TextField txtSearch;
-    @FXML
-    private TextField txtId;
-    @FXML
-    private TextField txtName;
-    @FXML
-    private TextField txtLatin;
-    @FXML
-    private ComboBox<?> cboGender;
-    @FXML
-    private TextField txtBirth;
-    @FXML
-    private TextField txtVillage;
-    @FXML
-    private TextField txtCommune;
-    @FXML
-    private TextField txtDistrict;
-    @FXML
-    private TextField txtProvince;
-    @FXML
-    private TextField txtPhone;
-    @FXML
-    private Button btnSave;
+    private TextField txtSearchMember;
     @FXML
     private TableView<?> tblMember;
     @FXML
-    private TableColumn<?, ?> cId;
+    private TableColumn<?, ?> cMid;
     @FXML
     private TableColumn<?, ?> cName;
     @FXML
@@ -61,17 +39,21 @@ public class RegisterController implements Initializable {
     @FXML
     private TableColumn<?, ?> cGender;
     @FXML
-    private TableColumn<?, ?> cBirth;
-    @FXML
-    private TableColumn<?, ?> cVillage;
-    @FXML
-    private TableColumn<?, ?> cCommune;
-    @FXML
-    private TableColumn<?, ?> cDistrict;
-    @FXML
-    private TableColumn<?, ?> cProvince;
-    @FXML
     private TableColumn<?, ?> cPhone;
+    @FXML
+    private TableView<?> tblBook;
+    @FXML
+    private TableColumn<?, ?> cBid;
+    @FXML
+    private TableColumn<?, ?> cTitle;
+    @FXML
+    private TableColumn<?, ?> cSub;
+    @FXML
+    private TableColumn<?, ?> cNumDay;
+    @FXML
+    private Button btnReturn;
+    @FXML
+    private ComboBox<?> cboCatBorrow;
 
     /**
      * Initializes the controller class.
@@ -82,19 +64,11 @@ public class RegisterController implements Initializable {
     }
 
     @FXML
-    private void clickSave(MouseEvent event) {
+    private void clickClear(MouseEvent event) {
     }
 
     @FXML
-    private void clickNew(MouseEvent event) {
-    }
-
-    @FXML
-    private void clickDelete(MouseEvent event) {
-    }
-
-    @FXML
-    private void clickClearSearch(MouseEvent event) {
+    private void clickReturn(MouseEvent event) {
     }
 
     @FXML
