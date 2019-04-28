@@ -1,0 +1,134 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 14, 2018, 11:27:10 AM
+    Author     : SRUN VANNARA
+*/
+
+.lbl-title{
+    -fx-pref-width:400;
+    -fx-border-color:  #e3e3e3;
+    -fx-border-radius: 0 0 10 10;
+    -fx-border-width: 0 1 1 1;
+    -fx-font-size: 14px;
+    -fx-text-fill: #868686;
+}
+
+.table-row-cell{
+    -fx-font-size: 14px;
+    -fx-font-family:"Kh System";
+    -fx-text-background-color:black;
+}
+.column-header{
+      -fx-border-color:darkgray;
+      -fx-background-color: white;
+}
+.table-view{
+    -fx-font-size: 14px;
+    -fx-font-family:"Kh System";
+    -fx-text-fill: #616161;
+}
+.table-view  .column-header   .label{
+    /*-fx-background-color: #e3e3e3;*/
+    -fx-alignment:CENTER_LEFT;
+    
+}
+ .show-hide-columns-button{
+     -fx-background-color:white;
+     -fx-border-color:darkgray;
+}
+.table-view:focused{
+    -fx-border-color:darkgray;
+    -fx-background-insets:0;   
+}
+
+.table-row-cell:selected{
+    -fx-background-color:#27ae60;
+    -fx-text-background-color:white;
+    -fx-alignment:CENTER_LEFT;
+}
+
+.button{
+    -fx-cursor: hand;
+     -fx-font-size: 14px;
+    -fx-font-family:"Kh System";
+    -fx-border-color: black;
+    -fx-padding: -2 0 3 0;
+    -fx-background-insets: 0px;
+    -fx-background-color: white;
+    -fx-text-fill: #4a4e4d;
+}
+
+.button:hover {
+    
+    -fx-background-color: #e3e3e3;
+    -fx-text-fill: black;
+    -fx-background-insets: 0px;
+    -fx-border-color: darkgray;
+    -fx-border-width: 1px;
+}
+.button:pressed{
+    -fx-background-color: #909090;
+    -fx-cursor: default;
+}
+
+.text-field{
+    -fx-text-fill: #616161;
+    -fx-border-color: silver;
+    -fx-border-radius: 20px;
+    -fx-background-insets:20px;
+    -fx-font-size: 14px;
+    -fx-font-family:"Kh System";
+    -fx-padding: 0 2 2 10;
+}
+
+.text-search{
+    -fx-text-fill: #616161;
+    -fx-border-color: silver;
+    -fx-border-radius: 20px;
+    -fx-background-insets: 20px;
+    -fx-font-size: 14px;
+    -fx-font-family:"Kh System";
+    -fx-padding: 0 2 2 30;
+}
+
+.combo-box {
+    -fx-text-fill: #616161;
+    -fx-border-color: silver;
+    -fx-border-radius: 20px;
+    -fx-background-insets: 21px;
+    -fx-font-size: 14px;
+    -fx-font-family:"Kh System";
+}
+
+.label{
+    -fx-font-size: 14px;
+    -fx-font-family:"Kh System";
+    -fx-text-fill: #616161;
+}
+.label-name{
+    -fx-font-size: 15px;
+    -fx-font-family:"Khmer Os System";
+    -fx-text-fill: white;
+}
+.btn-export{
+    -fx-text-fill: black;
+    -fx-padding:  10 10 10 10;
+    -fx-background-radius: 5;
+}
+.btn-export:hover {
+    -fx-border-color:  black;
+    -fx-text-fill: #8874a3;
+}
+.btn-export:pressed {
+   -fx-text-fill: white;
+}
+
+.pane-statistic>.label{
+     -fx-font-size: 14px;
+    -fx-font-family:"Khmer OS";
+    -fx-text-fill: white;
+}
