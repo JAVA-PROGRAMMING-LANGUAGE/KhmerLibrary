@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="mainPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.MainController">
+<StackPane fx:id="mainPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.MainController">
    <children>
       <BorderPane fx:id="borderPane" prefWidth="769.0" style="-fx-background-color: white;">
          <left>
@@ -186,6 +186,25 @@
                               <Insets left="122.0" right="55.0" />
                            </padding>
                         </Separator>
+                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="ចាក់សោកម្មវិធី" textFill="#616161">
+                           <font>
+                              <Font name="Kh System" size="16.0" />
+                           </font>
+                           <graphic>
+                              <MaterialIconView fill="#ff6363" glyphName="LOCK" size="25" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <padding>
+                              <Insets left="80.0" />
+                           </padding>
+                        </Button>
+                        <Separator opacity="0.5" prefWidth="200.0">
+                           <padding>
+                              <Insets left="122.0" right="55.0" />
+                           </padding>
+                        </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="អំពីកម្មវិធី" textFill="#616161">
                            <font>
                               <Font name="Kh System" size="16.0" />
@@ -210,7 +229,7 @@
                               <Font name="Kh System" size="16.0" />
                            </font>
                            <graphic>
-                              <MaterialIconView fill="#f22e2e" glyphName="CLOSE" size="25" />
+                              <MaterialIconView fill="RED" glyphName="CLOSE" size="25" />
                            </graphic>
                            <cursor>
                               <Cursor fx:constant="HAND" />
