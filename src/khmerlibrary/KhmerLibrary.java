@@ -36,6 +36,7 @@ public class KhmerLibrary extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        
     }
 
 }

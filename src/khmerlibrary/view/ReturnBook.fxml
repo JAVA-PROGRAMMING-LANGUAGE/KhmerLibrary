@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vbRegisterMember" alignment="TOP_CENTER" fillWidth="false" prefHeight="383.0" prefWidth="228.0" stylesheets="@../resource/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.RetrunBookController">
+<VBox fx:id="vbRegisterMember" alignment="TOP_CENTER" fillWidth="false" prefHeight="383.0" prefWidth="228.0" stylesheets="@../resource/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.RetrunBookController">
    <children>
       <Label alignment="CENTER" styleClass="lbl-title" text="សងសៀវភៅ">
          <opaqueInsets>
@@ -28,13 +28,12 @@
       </Label>
       <AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="689.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutY="4.0" text="បង្ហាញអ្នកបានខ្ចីសៀវភៅ" />
-            <TextField fx:id="txtSearchMember" layoutX="381.0" layoutY="1.0" prefHeight="33.0" prefWidth="362.0" promptText="ស្វែងរកអ្នកដែលបានខ្ចីសៀវភៅតាមរយៈឈ្មោះ" styleClass="text-search">
+            <TextField fx:id="txtSearchMember" layoutX="192.0" layoutY="2.0" prefHeight="33.0" prefWidth="362.0" promptText="ស្វែងរកអ្នកដែលបានខ្ចីសៀវភៅតាមរយៈឈ្មោះ" styleClass="text-search">
                <font>
                   <Font name="Kh System" size="15.0" />
                </font>
             </TextField>
-            <TableView fx:id="tblMember" layoutX="1.0" layoutY="45.0" prefHeight="237.0" prefWidth="745.0">
+            <TableView fx:id="tblMember" layoutX="1.0" layoutY="76.0" prefHeight="237.0" prefWidth="745.0">
                <placeholder>
                   <Label text="" />
                </placeholder>
@@ -49,12 +48,12 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <MaterialIconView fill="#818181" glyphName="REPLAY" layoutX="712.0" layoutY="28.0" onMouseClicked="#clickClear" size="24">
+            <MaterialIconView fill="#818181" glyphName="REPLAY" layoutX="523.0" layoutY="29.0" onMouseClicked="#clickClear" size="24">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MaterialIconView>
-            <TableView fx:id="tblBook" layoutX="1.0" layoutY="355.0" prefHeight="121.0" prefWidth="745.0">
+            <TableView fx:id="tblBook" layoutX="1.0" layoutY="386.0" prefHeight="121.0" prefWidth="745.0">
                <placeholder>
                   <Label text="" />
                </placeholder>
@@ -68,26 +67,26 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Button fx:id="btnReturn" alignment="CENTER" layoutX="671.0" layoutY="503.0" mnemonicParsing="false" onMouseClicked="#clickReturn" prefHeight="33.0" prefWidth="75.0" text="សង" visible="false">
+            <Button fx:id="btnReturn" alignment="CENTER" layoutX="671.0" layoutY="534.0" mnemonicParsing="false" onMouseClicked="#clickReturn" prefHeight="33.0" prefWidth="75.0" text="សង" visible="false">
                <font>
                   <Font name="Kh System" size="14.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="189.0" layoutY="312.0" prefHeight="35.0" prefWidth="369.0" style="-fx-background-color: orange; -fx-text-fill: white; -fx-background-radius: 20;" text="បញ្ជីសៀវភៅដែលបានខ្ចី">
+            <Label alignment="CENTER" layoutX="189.0" layoutY="343.0" prefHeight="35.0" prefWidth="369.0" style="-fx-background-color: #8b8d79; -fx-text-fill: white; -fx-background-radius: 20;" text="បញ្ជីសៀវភៅដែលបានខ្ចី">
                <font>
                   <Font name="Kh System" size="14.0" />
                </font>
             </Label>
-            <MaterialIconView fill="#909090" glyphName="SEARCH" layoutX="387.0" layoutY="31.0" onMouseClicked="#clickSearch" size="25">
+            <MaterialIconView fill="#909090" glyphName="SEARCH" layoutX="198.0" layoutY="31.0" onMouseClicked="#clickSearch" size="25">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </MaterialIconView>
-            <ComboBox fx:id="cboCatBorrow" layoutX="165.0" layoutY="1.0" prefHeight="33.0" prefWidth="198.0">
-               <padding>
-                  <Insets bottom="-5.0" top="-5.0" />
-               </padding>
-            </ComboBox>
+            <JFXCheckBox fx:id="checkBox" checkedColor="#ff4400" layoutX="4.0" layoutY="39.0" onAction="#checkBoxClick" text="បង្ហាញអ្នកដែលបានខ្ចីលើស១៤ថ្ងៃ" textFill="ORANGE" unCheckedColor="TEAL" underline="true">
+               <font>
+                  <Font name="Kh System" size="14.0" />
+               </font>
+            </JFXCheckBox>
          </children>
       </AnchorPane>
    </children>

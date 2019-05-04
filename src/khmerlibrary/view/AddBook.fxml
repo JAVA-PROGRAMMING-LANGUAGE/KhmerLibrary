@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vbRegisterMember" alignment="TOP_CENTER" fillWidth="false" prefHeight="383.0" prefWidth="228.0" stylesheets="@../resource/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.AddBookController">
+<VBox fx:id="vbRegisterMember" alignment="TOP_CENTER" fillWidth="false" prefHeight="383.0" prefWidth="228.0" stylesheets="@../resource/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.AddBookController">
    <children>
       <Label alignment="CENTER" styleClass="lbl-title" text="បន្ថែមសៀវភៅ">
          <opaqueInsets>
@@ -38,7 +38,7 @@
                   <Font name="Kh System" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtId" layoutX="110.0" onKeyPressed="#idTextChange" prefHeight="25.0" prefWidth="250.0">
+            <TextField fx:id="txtId" layoutX="110.0" prefHeight="25.0" prefWidth="250.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -98,7 +98,7 @@
                   <Font name="Kh System" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtNumBook" layoutX="110.0" layoutY="135.0" prefHeight="25.0" prefWidth="250.0">
+            <TextField fx:id="txtQty" layoutX="110.0" layoutY="135.0" prefHeight="25.0" prefWidth="250.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -145,10 +145,10 @@
                   <TableColumn fx:id="cId" prefWidth="75.0" text="កូដ/ISBN" />
                   <TableColumn fx:id="cTitle" prefWidth="75.0" text="ចំណងជើង" />
                   <TableColumn fx:id="cSubTitle" prefWidth="75.0" text="ចំណងជើងរង" />
-                  <TableColumn fx:id="cCategory" prefWidth="75.0" text="ប្រភេទ" />
+                  <TableColumn fx:id="cCat" prefWidth="75.0" text="ប្រភេទ" />
                   <TableColumn fx:id="cAuthor" prefWidth="75.0" text="អ្នកនិពន្ធ" visible="false" />
                   <TableColumn fx:id="cPrintYear" prefWidth="75.0" text="ឆ្នាំបោះពុម្ព" visible="false" />
-                  <TableColumn fx:id="cBookNum" prefWidth="75.0" text="ចំនួន" />
+                  <TableColumn fx:id="cQty" prefWidth="75.0" text="ចំនួន" />
                   <TableColumn fx:id="cOther" prefWidth="75.0" text="ផ្សេងៗ" visible="false" />
                </columns>
                <columnResizePolicy>

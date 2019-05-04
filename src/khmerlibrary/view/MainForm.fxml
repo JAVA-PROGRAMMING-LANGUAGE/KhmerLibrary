@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="mainPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.MainController">
+<StackPane fx:id="mainPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.MainController">
    <children>
       <BorderPane fx:id="borderPane" prefWidth="769.0" style="-fx-background-color: white;">
          <left>
@@ -33,7 +33,7 @@
                         </Label>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#RegisterClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="ចុះឈ្មោះអ្នកខ្ចីសៀវភៅ" textFill="#616161">
                            <graphic>
-                              <MaterialIconView fill="#2f475bc7" glyphName="PERSON_ADD" size="25" />
+                              <MaterialIconView fill="#2f475bc7" glyphName="GROUP_ADD" size="27" />
                            </graphic>
                            <font>
                               <Font name="Kh System" size="16.0" />
@@ -61,7 +61,7 @@
                               <Insets left="80.0" />
                            </padding>
                            <graphic>
-                              <MaterialIconView fill="#398290" glyphName="CHROME_READER_MODE" size="23" />
+                              <MaterialIconView fill="#ff5151" glyphName="BOOK" size="25" />
                            </graphic>
                         </Button>
                         <Separator layoutX="10.0" layoutY="73.0" opacity="0.5" prefWidth="200.0">
@@ -80,7 +80,7 @@
                               <Insets left="80.0" />
                            </padding>
                            <graphic>
-                              <MaterialIconView fill="#57006f" glyphName="CHROME_READER_MODE" size="23" />
+                              <MaterialIconView fill="#567686" glyphName="BOOK" size="25" />
                            </graphic>
                         </Button>
                         <Separator layoutX="10.0" layoutY="100.0" opacity="0.5" prefWidth="200.0">
@@ -99,7 +99,7 @@
                               <Insets left="80.0" />
                            </padding>
                            <graphic>
-                              <MaterialIconView fill="#862f2f" glyphName="CHROME_READER_MODE" size="23" />
+                              <MaterialIconView fill="#8b8d79" glyphName="BOOK" size="25" />
                            </graphic>
                         </Button>
                         <Separator layoutX="10.0" layoutY="127.0" opacity="0.5" prefWidth="200.0">
@@ -150,7 +150,7 @@
                               <Font name="Kh System" size="16.0" />
                            </font>
                            <graphic>
-                              <MaterialIconView fill="#ffb200" glyphName="WB_INCANDESCENT" size="27" />
+                              <MaterialIconView fill="#ffb200" glyphName="WB_INCANDESCENT" size="28" />
                            </graphic>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -229,7 +229,7 @@
                               <Font name="Kh System" size="16.0" />
                            </font>
                            <graphic>
-                              <MaterialIconView fill="RED" glyphName="CLOSE" size="25" />
+                              <MaterialIconView fill="RED" glyphName="SETTINGS_POWER" size="25" />
                            </graphic>
                            <cursor>
                               <Cursor fx:constant="HAND" />

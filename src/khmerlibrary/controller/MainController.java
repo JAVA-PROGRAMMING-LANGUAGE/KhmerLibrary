@@ -35,21 +35,14 @@ public class MainController implements Initializable {
     @FXML
     private BorderPane borderPane;
 
-    //Parent registerPane, addBookPane, issueBookPane, retunBookPane, addMaterialPane;
+    public static StackPane stackPane;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            Parent registerPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/Register.fxml"));
-            Parent addBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/AddBook.fxml"));
-            Parent issueBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/IssueBook.fxml"));
-            Parent retunBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/ReturnBook.fxml"));
-            Parent addMaterialPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/AddMaterial.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        this.stackPane = mainPane;
     }
 
     @FXML
@@ -71,25 +64,28 @@ public class MainController implements Initializable {
     private void issueBookClick(MouseEvent event) throws IOException {
         Parent issueBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/IssueBook.fxml"));
         borderPane.setCenter(issueBookPane);
-        new ZoomIn(issueBookPane).play();
+        new SlideInDown(issueBookPane).play();
     }
 
     @FXML
     private void returnBookClick(MouseEvent event) throws IOException {
         Parent retunBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/ReturnBook.fxml"));
         borderPane.setCenter(retunBookPane);
-        new SlideInRight(retunBookPane).play();
+        new SlideInUp(retunBookPane).play();
     }
 
     @FXML
     private void addMaterialClick(MouseEvent event) throws IOException {
         Parent addMaterialPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/AddMaterial.fxml"));
         borderPane.setCenter(addMaterialPane);
-        new FadeInUp(addMaterialPane).play();
+        new SlideInDown(addMaterialPane).play();
     }
 
     @FXML
-    private void viewStatisticClick(MouseEvent event) {
+    private void viewStatisticClick(MouseEvent event) throws IOException {
+        Parent viewStatistic = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/ViewStatistic.fxml"));
+        borderPane.setCenter(viewStatistic);
+        new SlideInRight(viewStatistic).play();
     }
 
 }

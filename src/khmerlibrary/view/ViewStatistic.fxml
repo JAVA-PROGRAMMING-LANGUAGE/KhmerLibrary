@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="624.0" prefWidth="754.0" stylesheets="@../resource/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.viewStatisticController">
+   <children>
+      <Label alignment="CENTER" styleClass="lbl-title" text="បង្ហាញស្ថិតិ">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <AnchorPane prefHeight="520.0" prefWidth="704.0">
+         <children>
+            <VBox fx:id="paneMemberByGender" alignment="TOP_CENTER" prefHeight="500.0" prefWidth="290.0" style="-fx-border-radius: 0 0 10 10; -fx-border-color: #e3e3e3;">
+               <children>
+                  <Label alignment="CENTER" styleClass="lbl-title" text="ចំនួនអ្នកចុះឈ្មោះតាមភេទ" />
+               </children></VBox>
+            <VBox fx:id="paneBookByCat" layoutX="302.0" prefHeight="500.0" prefWidth="290.0" style="-fx-border-color: #e3e3e3; -fx-border-radius: 0 0 10 10;">
+               <children>
+                  <Label alignment="CENTER" styleClass="lbl-title" text="ចំនួនសៀវភៅតាមប្រភេទ">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></Label>
+               </children></VBox>
+            <VBox fx:id="paneBookBorrowing" alignment="TOP_CENTER" layoutX="604.0" prefHeight="500.0" prefWidth="290.0" style="-fx-border-radius: 0 0 10 10; -fx-border-color: #e3e3e3;">
+               <children>
+                  <Label alignment="CENTER" styleClass="lbl-title" text="ចំនួនសៀវភៅដែលកំពុងខ្ចី" />
+               </children></VBox>
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" />
+   </padding>
+</VBox>

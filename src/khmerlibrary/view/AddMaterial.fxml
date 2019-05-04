@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="vbRegisterMember" alignment="TOP_CENTER" fillWidth="false" prefHeight="383.0" prefWidth="228.0" stylesheets="@../resource/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.AddMaterialController">
+<VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="383.0" prefWidth="228.0" stylesheets="@../resource/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.AddMaterialController">
    <children>
       <Label alignment="CENTER" styleClass="lbl-title" text="បន្ថែមសម្ភារ">
          <opaqueInsets>
@@ -60,7 +60,7 @@
                   <Font name="Kh System" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtNum" layoutX="83.0" layoutY="50.0" prefWidth="250.0">
+            <TextField fx:id="txtQty" layoutX="83.0" layoutY="50.0" prefWidth="250.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -104,7 +104,7 @@
                   <Label text="" />
                </placeholder>
                <columns>
-                  <TableColumn fx:id="cId" prefWidth="75.0" text="លេខសម្គាល់" visible="false" />
+                  <TableColumn fx:id="cId" prefWidth="75.0" text="លេខសម្គាល់" />
                   <TableColumn fx:id="cName" prefWidth="75.0" text="ឈ្មោះសម្ភារ" />
                   <TableColumn fx:id="cPrice" prefWidth="75.0" text="តម្លៃ" />
                   <TableColumn fx:id="cNum" prefWidth="75.0" text="ចំនួន" />
