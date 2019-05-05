@@ -145,7 +145,7 @@
                               <Insets left="122.0" right="55.0" />
                            </padding>
                         </Separator>
-                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="មើលជំនួយ" textFill="#616161">
+                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#viewHelpClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="មើលជំនួយ" textFill="#616161">
                            <font>
                               <Font name="Kh System" size="16.0" />
                            </font>
@@ -167,7 +167,7 @@
                               <Insets left="122.0" right="55.0" />
                            </padding>
                         </Separator>
-                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="ប្ដូរពាក្យសម្ងាត់" textFill="#616161">
+                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#changePwdClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="ប្ដូរពាក្យសម្ងាត់" textFill="#616161">
                            <font>
                               <Font name="Kh System" size="16.0" />
                            </font>
@@ -186,7 +186,7 @@
                               <Insets left="122.0" right="55.0" />
                            </padding>
                         </Separator>
-                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="ចាក់សោកម្មវិធី" textFill="#616161">
+                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#lockProgramClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="ចាក់សោកម្មវិធី" textFill="#616161">
                            <font>
                               <Font name="Kh System" size="16.0" />
                            </font>

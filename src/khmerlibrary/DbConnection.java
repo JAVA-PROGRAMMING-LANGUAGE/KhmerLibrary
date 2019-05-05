@@ -22,7 +22,7 @@ public class DbConnection {
         Connection conn = null;
             try {
                 conn = DriverManager.getConnection(url, user, pwd);
-                System.out.println("Connected");
+                //System.out.println("Connected");
             } catch (SQLException ex) {
                 new InfoDialog().show("មានបញ្ហា!", ex.getMessage());
         }
