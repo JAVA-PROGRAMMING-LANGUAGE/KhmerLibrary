@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vbRegisterMember" alignment="TOP_CENTER" fillWidth="false" prefHeight="383.0" prefWidth="228.0" stylesheets="@../resource/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.HomeController">
+   <children>
+      <Label alignment="CENTER" styleClass="lbl-title" text="ទំព័រដើម">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label text="យូកូដ សូមស្វាគមន៍" underline="true" />
+      <ImageView fitHeight="473.0" fitWidth="390.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+         <image>
+            <Image url="@../resource/logo.png" />
+         </image>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <effect>
+            <DropShadow blurType="TWO_PASS_BOX" color="#948080" height="32.62" radius="19.5775" width="47.69" />
+         </effect>
+      </ImageView>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" />
+   </padding>
+</VBox>

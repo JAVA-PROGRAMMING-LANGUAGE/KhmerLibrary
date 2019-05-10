@@ -5,11 +5,9 @@
  */
 package khmerlibrary.controller;
 
-import animatefx.animation.FadeInUp;
 import animatefx.animation.SlideInDown;
 import animatefx.animation.SlideInRight;
 import animatefx.animation.SlideInUp;
-import animatefx.animation.ZoomIn;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import java.awt.Desktop;
@@ -23,6 +21,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -61,6 +60,7 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         conn = DbConnection.connect();
         this.stackPane = mainPane;
+        login();
     }
 
     @FXML
@@ -194,7 +194,11 @@ public class MainController implements Initializable {
 
     @FXML
     private void lockProgramClick(MouseEvent event) {
-        Button close = new Button("បិទកម្មវិធី");
+        login();
+    }
+
+    private void login() {
+        Button close = new Button("ចាកចេញពីកម្មវិធី");
         Button login = new Button("ចូលប្រើ");
         close.setStyle("-fx-cursor:hand ; -fx-border-color:white; -fx-background-color:white; -fx-text-fill:red");
         login.setStyle("-fx-cursor:hand; -fx-border-color:white; -fx-background-color:white ; -fx-text-fill:teal");
@@ -208,7 +212,7 @@ public class MainController implements Initializable {
         content.setActions(close, login);
         content.setStyle("-fx-font-size: 15; -fx-font-family: 'Kh System'");
         close.setOnAction(e -> {
-            dialog.close();
+            Platform.exit();
         });
         login.setOnAction(e -> {
             String sql = "SELECT * FROM tb_pwd WHERE pwd=?";
@@ -232,6 +236,45 @@ public class MainController implements Initializable {
                     Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
+        });
+        dialog.show();
+        try {
+            Parent homePane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/Home.fxml"));
+            borderPane.setCenter(homePane);
+            new SlideInUp(homePane).play();
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void aboutClick(MouseEvent event) {
+        try {
+            Parent aboutPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/About.fxml"));
+            borderPane.setCenter(aboutPane);
+            new SlideInDown(aboutPane).play();
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void closeClick(MouseEvent event) {
+        Button close = new Button("បិទ");
+        close.setStyle("-fx-cursor:hand;  -fx-text-fill:red ; -fx-border-color:white; -fx-background-color:white ");
+        Button exit = new Button("ចាកចេញ");
+        exit.setStyle("-fx-cursor:hand;  -fx-text-fill:teal ; -fx-border-color:white; -fx-background-color:white ");
+        JFXDialogLayout content = new JFXDialogLayout();
+        JFXDialog dialog = new JFXDialog(MainController.stackPane, content, JFXDialog.DialogTransition.CENTER, true);
+        content.setHeading(new Text("ចាកចេញពីកម្មវិធី"));
+        content.setBody(new Text("តើអ្នកពិតជាចង់ចាកចេញពីកម្មវិធីមែនទេ?"));
+        content.setStyle("-fx-font-size: 15; -fx-font-family: 'Kh System'");
+        content.setActions(close, exit);
+        close.setOnAction(e -> {
+            dialog.close();
+        });
+        exit.setOnAction(e -> {
+            Platform.exit();
         });
         dialog.show();
     }

@@ -205,12 +205,12 @@
                               <Insets left="122.0" right="55.0" />
                            </padding>
                         </Separator>
-                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="275.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="អំពីកម្មវិធី" textFill="#616161">
+                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#aboutClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="អំពីកម្មវិធី" textFill="#616161">
                            <font>
                               <Font name="Kh System" size="16.0" />
                            </font>
                            <graphic>
-                              <MaterialIconView fill="#1a00ab" glyphName="INFO" size="25" />
+                              <MaterialIconView fill="TEAL" glyphName="INFO" size="25" />
                            </graphic>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -224,7 +224,7 @@
                               <Insets left="122.0" right="55.0" />
                            </padding>
                         </Separator>
-                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="បិទកម្មវិធី" textFill="#616161">
+                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#closeClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="ចាកចេញពីកម្មវិធី" textFill="#616161">
                            <font>
                               <Font name="Kh System" size="16.0" />
                            </font>

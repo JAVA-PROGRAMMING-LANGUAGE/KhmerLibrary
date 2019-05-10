@@ -77,7 +77,6 @@ and open the template in the editor.
 .text-field{
     -fx-text-fill: #616161;
     -fx-border-color: silver;
-    /*-fx-border-radius: 20px;*/
     -fx-background-insets:20px;
     -fx-font-size: 14px;
     -fx-font-family:"Kh System";
@@ -85,13 +84,8 @@ and open the template in the editor.
 }
 
 .text-search{
-    -fx-text-fill: #616161;
-    -fx-border-color: silver;
     -fx-border-radius: 20px;
-    -fx-background-insets: 20px;
-    -fx-font-size: 14px;
-    -fx-font-family:"Kh System";
-    -fx-padding: 0 2 2 30;
+    -fx-padding: 0 30 2 30;
 }
 
 .combo-box {

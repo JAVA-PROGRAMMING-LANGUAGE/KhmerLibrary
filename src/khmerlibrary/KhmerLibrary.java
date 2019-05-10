@@ -26,7 +26,7 @@ public class KhmerLibrary extends Application {
         stage.setTitle("Khmer Libray");
         stage.setMaximized(true);
         stage.setScene(scene);
-        Image img = new Image("khmerlibrary/resource/library.png");
+        Image img = new Image("khmerlibrary/resource/logo.png");
         stage.getIcons().add(img);
         stage.show();
     }
