@@ -22,7 +22,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -206,7 +205,7 @@ public class RetrunBookController implements Initializable {
         JFXDialog dialog = new JFXDialog(MainController.stackPane, content, JFXDialog.DialogTransition.CENTER, true);
         content.setHeading(new Text("សងសៀវភៅ"));
         content.setBody(new Text("តើអ្នកពិតជាចង់សងសៀវភៅនេះមែនទេ?"));
-        content.setStyle("-fx-font-size: 15; -fx-font-family: 'Kh System'");
+        content.setStyle("-fx-font-size: 17; -fx-font-family: 'Nokora'");
         content.setActions(close, yes);
         close.setOnAction(e -> {
             dialog.close();

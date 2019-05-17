@@ -23,7 +23,7 @@ public class KhmerLibrary extends Application {
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("view/MainForm.fxml"));
         Scene scene = new Scene(root);
-        stage.setTitle("Khmer Libray");
+        stage.setTitle("YCODE LIBRARY");
         stage.setMaximized(true);
         stage.setScene(scene);
         Image img = new Image("khmerlibrary/resource/logo.png");

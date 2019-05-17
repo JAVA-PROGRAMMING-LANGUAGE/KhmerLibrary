@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -11,16 +13,27 @@
    <children>
       <Label alignment="TOP_CENTER" styleClass="lbl-title" text="អំពីកម្មវិធី" textAlignment="CENTER">
          <VBox.margin>
-            <Insets bottom="30.0" />
+            <Insets bottom="20.0" />
          </VBox.margin></Label>
-      <VBox alignment="CENTER_LEFT" prefHeight="94.0" prefWidth="500.0" style="-fx-background-color: #ffc425; -fx-background-radius: 10;">
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/logo.png" />
+         </image>
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="#868686" />
+         </effect>
+      </ImageView>
+      <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="550.0" style="-fx-background-color: #ffc425; -fx-background-radius: 10;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
             <HBox>
                <children>
-                  <Label text="កម្មវិធីគ្រប់គ្រងបណ្ណាល័យនេះត្រូវបានបង្កើតឡើងដោយ យូកូដ">
+                  <Label text="កម្មវិធីគ្រប់គ្រងបណ្ណាល័យនេះត្រូវបានបង្កើតឡើងដោយ វ៉ាយកូដ">
                      <font>
                         <Font name="Khmer OS" size="14.0" />
                      </font>
@@ -45,10 +58,10 @@
             <Insets bottom="20.0" />
          </VBox.margin>
          <padding>
-            <Insets left="10.0" />
+            <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
          </padding>
       </VBox>
-      <VBox alignment="CENTER_LEFT" prefHeight="128.0" prefWidth="500.0" style="-fx-background-color: #ff8b94; -fx-background-radius: 10;">
+      <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="550.0" style="-fx-background-color: #ff8b94; -fx-background-radius: 10;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -85,27 +98,20 @@
             <Insets bottom="20.0" />
          </VBox.margin>
          <padding>
-            <Insets left="10.0" />
+            <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
          </padding>
       </VBox>
-      <VBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="500.0" style="-fx-background-color: #00aedb; -fx-background-radius: 10;">
+      <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="550.0" style="-fx-background-color: #00aedb; -fx-background-radius: 10;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
-            <HBox>
-               <children>
-                  <Label text="ទាក់ទងអ្នកសរសេរកម្មវិធីនេះរយៈលេខទូរស័ព្ទ ">
-                     <font>
-                        <Font name="Khmer OS" size="14.0" />
-                     </font>
-                  </Label>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <Label text="ឬតាមរយៈគណនីហ្វេសប៊ុក ">
+            <Label text="ទាក់ទងអ្នកសរសេរកម្មវិធីនេះរយៈលេខទូរស័ព្ទ: ">
+               <font>
+                  <Font name="Khmer OS" size="14.0" />
+               </font>
+            </Label>
+            <Label text="ឬតាមរយៈគណនីហ្វេសប៊ុក: វ៉ាយកូដ YCODE">
                <font>
                   <Font name="Khmer OS" size="14.0" />
                </font>
@@ -115,7 +121,7 @@
             <DropShadow color="#b5b5b5" />
          </effect>
          <padding>
-            <Insets left="10.0" />
+            <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
          </padding>
       </VBox>
    </children>

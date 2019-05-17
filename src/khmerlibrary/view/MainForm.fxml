@@ -22,7 +22,7 @@
                      <children>
                         <Label prefHeight="50.0" prefWidth="142.0" text="ម៉ឺនុយ" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <padding>
                               <Insets left="55.0" />
@@ -36,7 +36,7 @@
                               <MaterialIconView fill="#2f475bc7" glyphName="GROUP_ADD" size="27" />
                            </graphic>
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -52,7 +52,7 @@
                         </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#issueBookClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text=" ឱ្យខ្ចីសៀវភៅ" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -71,7 +71,7 @@
                         </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#returnBookClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text=" សងសៀវភៅ" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -90,7 +90,7 @@
                         </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#addBookClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text=" បន្ថែមសៀវភៅ" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -109,7 +109,7 @@
                         </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#addMaterialClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="បន្ថែមសម្ភារ" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <graphic>
                               <MaterialIconView fill="#da7979" glyphName="WIDGETS" size="25" />
@@ -128,7 +128,7 @@
                         </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#viewStatisticClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="បង្ហាញស្ថិតិ" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <graphic>
                               <MaterialIconView fill="#00a46b" glyphName="INSERT_CHART" size="26" />
@@ -147,7 +147,7 @@
                         </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#viewHelpClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="មើលជំនួយ" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <graphic>
                               <MaterialIconView fill="#ffb200" glyphName="WB_INCANDESCENT" size="28" />
@@ -169,7 +169,7 @@
                         </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#changePwdClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="ប្ដូរពាក្យសម្ងាត់" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <graphic>
                               <MaterialIconView fill="#30c0f0" glyphName="LOCK" size="25" />
@@ -188,7 +188,7 @@
                         </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#lockProgramClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="ចាក់សោកម្មវិធី" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <graphic>
                               <MaterialIconView fill="#ff6363" glyphName="LOCK" size="25" />
@@ -207,7 +207,7 @@
                         </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="275.0" mnemonicParsing="false" onMouseClicked="#aboutClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="អំពីកម្មវិធី" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <graphic>
                               <MaterialIconView fill="TEAL" glyphName="INFO" size="25" />
@@ -226,7 +226,7 @@
                         </Separator>
                         <Button alignment="TOP_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onMouseClicked="#closeClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="ចាកចេញពីកម្មវិធី" textFill="#616161">
                            <font>
-                              <Font name="Kh System" size="16.0" />
+                              <Font name="NiDA Bayon" size="17.0" />
                            </font>
                            <graphic>
                               <MaterialIconView fill="RED" glyphName="SETTINGS_POWER" size="25" />
@@ -245,12 +245,9 @@
                         </Separator>
                      </children>
                   </VBox>
-                  <Separator halignment="LEFT" opacity="0.5" orientation="VERTICAL" prefHeight="200.0">
-                     <padding>
-                        <Insets right="-2.0" />
-                     </padding>
+                  <Separator halignment="LEFT" orientation="VERTICAL" prefHeight="200.0">
                      <HBox.margin>
-                        <Insets top="-10.0" />
+                        <Insets top="-13.5" />
                      </HBox.margin>
                   </Separator>
                </children>
@@ -260,7 +257,7 @@
             </HBox>
          </left>
          <top>
-            <Separator opacity="0.5" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <Separator prefWidth="200.0" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets top="5.0" />
                </BorderPane.margin>

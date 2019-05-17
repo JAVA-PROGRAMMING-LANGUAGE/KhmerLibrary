@@ -5,6 +5,8 @@
  */
 package khmerlibrary.controller;
 
+import animatefx.animation.FadeIn;
+import animatefx.animation.FadeInDownBig;
 import animatefx.animation.SlideInDown;
 import animatefx.animation.SlideInRight;
 import animatefx.animation.SlideInUp;
@@ -107,14 +109,10 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private void viewHelpClick(MouseEvent event) {
-        try {
-            File file = new File("src/khmerlibrary/resource/help.html");
-            Desktop.getDesktop().open(file);
-        } catch (Exception ex) {
-            new InfoDialog().show("មានបញ្ហា!", ex.getMessage());
-            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    private void viewHelpClick(MouseEvent event) throws IOException {
+        Parent help = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/help.fxml"));
+        borderPane.setCenter(help);
+        new FadeInDownBig(help).play();
     }
 
     @FXML
@@ -136,7 +134,7 @@ public class MainController implements Initializable {
         vb.getChildren().setAll(txtOldPass, txtNewPass);
 
         content.setBody(vb);
-        content.setStyle("-fx-font-size: 15; -fx-font-family: 'Kh System'");
+        content.setStyle("-fx-font-size: 16; -fx-font-family: 'Nokora'");
         content.setActions(close, change);
         close.setOnAction(e -> {
             dialog.close();
@@ -210,7 +208,7 @@ public class MainController implements Initializable {
         txtPwd.setPromptText("សូមវាយពាក្យសម្ងាត់ដើម្បីចូលប្រើ");
         content.setBody(txtPwd);
         content.setActions(close, login);
-        content.setStyle("-fx-font-size: 15; -fx-font-family: 'Kh System'");
+        content.setStyle("-fx-font-size: 16; -fx-font-family: 'Nokora'");
         close.setOnAction(e -> {
             Platform.exit();
         });
@@ -268,7 +266,7 @@ public class MainController implements Initializable {
         JFXDialog dialog = new JFXDialog(MainController.stackPane, content, JFXDialog.DialogTransition.CENTER, true);
         content.setHeading(new Text("ចាកចេញពីកម្មវិធី"));
         content.setBody(new Text("តើអ្នកពិតជាចង់ចាកចេញពីកម្មវិធីមែនទេ?"));
-        content.setStyle("-fx-font-size: 15; -fx-font-family: 'Kh System'");
+        content.setStyle("-fx-font-size: 17; -fx-font-family: 'Nokora'");
         content.setActions(close, exit);
         close.setOnAction(e -> {
             dialog.close();

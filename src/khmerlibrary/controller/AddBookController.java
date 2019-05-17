@@ -25,7 +25,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -367,7 +366,7 @@ public class AddBookController implements Initializable {
             JFXDialog dialog = new JFXDialog(MainController.stackPane, content, JFXDialog.DialogTransition.TOP, true);
             content.setHeading(new Text(head));
             content.setBody(new Text(body));
-            content.setStyle("-fx-font-size: 15; -fx-font-family: 'Kh System'");
+            content.setStyle("-fx-font-size: 17; -fx-font-family: 'Nokora'");
             content.setActions(close, delete);
             close.setOnAction(e -> {
                 dialog.close();

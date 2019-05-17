@@ -30,7 +30,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import khmerlibrary.DbConnection;
 import khmerlibrary.InfoDialog;
@@ -264,7 +263,7 @@ public class IssueBookController implements Initializable {
         JFXDialog dialog = new JFXDialog(MainController.stackPane, content, JFXDialog.DialogTransition.CENTER, true);
         content.setHeading(new Text("ឱ្យខ្ចីសៀវភៅ"));
         content.setBody(new Text("តើអ្នកពិតជាចង់ឱ្យខ្ចីសៀវភៅនេះមែនទេ?"));
-        content.setStyle("-fx-font-size: 15; -fx-font-family: 'Kh System'");
+        content.setStyle("-fx-font-size: 17; -fx-font-family: 'Nokora'");
         content.setActions(close, ok);
         close.setOnAction(e -> {
             dialog.close();

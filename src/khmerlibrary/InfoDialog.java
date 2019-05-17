@@ -8,7 +8,6 @@ package khmerlibrary;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import khmerlibrary.controller.MainController;
 
@@ -25,7 +24,7 @@ public class InfoDialog {
         JFXDialog dialog = new JFXDialog(MainController.stackPane, content, JFXDialog.DialogTransition.CENTER, true);
         content.setHeading(new Text(head));
         content.setBody(new Text(body));
-        content.setStyle("-fx-font-size: 15; -fx-font-family: 'Kh System'");
+        content.setStyle("-fx-font-size: 17; -fx-font-family: 'Nokora'");
         content.setActions(close);
         close.setOnAction(e -> {
             dialog.close();

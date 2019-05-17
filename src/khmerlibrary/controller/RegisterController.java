@@ -12,7 +12,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Observable;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -131,7 +130,7 @@ public class RegisterController implements Initializable {
             JFXDialog dialog = new JFXDialog(MainController.stackPane, content, JFXDialog.DialogTransition.TOP, true);
             content.setHeading(new Text(head));
             content.setBody(new Text(body));
-            content.setStyle("-fx-font-size: 15; -fx-font-family: 'Kh System'");
+            content.setStyle("-fx-font-size: 17; -fx-font-family: 'Nokora'");
             content.setActions(close, delete);
             close.setOnAction(e -> {
                 dialog.close();
