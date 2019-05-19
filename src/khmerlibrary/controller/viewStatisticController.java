@@ -60,7 +60,7 @@ public class viewStatisticController implements Initializable {
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
             while (rs.next()) {
-                pieChartData.add(new PieChart.Data(rs.getString(1) + "សរុបៈ " + rs.getInt(2) + "នាក់", rs.getInt(2)));
+                pieChartData.add(new PieChart.Data(rs.getString(1) + "មានចំនួន " + rs.getInt(2) + "នាក់", rs.getInt(2)));
             };
             PieChart chart = new PieChart(pieChartData);
             chart.setLegendSide(Side.BOTTOM);

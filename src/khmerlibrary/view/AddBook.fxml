@@ -33,7 +33,7 @@
                   <Font name="Kh System" size="15.0" />
                </font>
             </TextField>
-            <Label style="-fx-text-fill: #616161;" text="កូដ/ISBN">
+            <Label style="-fx-text-fill: #616161;" text="កូដ/ISBN*">
                <font>
                   <Font name="Kh System" size="14.0" />
                </font>
@@ -43,7 +43,7 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <Label layoutX="408.0" layoutY="4.0" style="-fx-text-fill: #616161;" text="ចំណងជើង">
+            <Label layoutX="408.0" layoutY="4.0" style="-fx-text-fill: #616161;" text="ចំណងជើង*">
                <font>
                   <Font name="Kh System" size="14.0" />
                </font>
@@ -68,7 +68,7 @@
                   <Insets bottom="-5.0" top="-5.0" />
                </padding>
             </ComboBox>
-            <Label layoutX="408.0" layoutY="45.0" style="-fx-text-fill: #616161;" text="ប្រភេទ">
+            <Label layoutX="408.0" layoutY="45.0" style="-fx-text-fill: #616161;" text="ប្រភេទ*">
                <font>
                   <Font name="Kh System" size="14.0" />
                </font>
@@ -93,7 +93,7 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <Label layoutY="135.0" style="-fx-text-fill: #616161;" text="ចំនួនទាំងអស់">
+            <Label layoutY="135.0" style="-fx-text-fill: #616161;" text="ចំនួនទាំងអស់*">
                <font>
                   <Font name="Kh System" size="14.0" />
                </font>

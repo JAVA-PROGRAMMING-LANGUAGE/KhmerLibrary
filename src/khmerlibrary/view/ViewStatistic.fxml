@@ -20,18 +20,18 @@
       </Label>
       <AnchorPane prefHeight="520.0" prefWidth="704.0">
          <children>
-            <VBox fx:id="paneMemberByGender" alignment="TOP_CENTER" prefHeight="500.0" prefWidth="290.0" style="-fx-border-radius: 0 0 10 10; -fx-border-color: #e3e3e3;">
+            <VBox fx:id="paneMemberByGender" alignment="TOP_CENTER" prefHeight="500.0" prefWidth="290.0" style="-fx-border-radius: 0 0 10 10; -fx-border-color: #d5dbde; -fx-border-width: 1 2 2 2;">
                <children>
                   <Label alignment="CENTER" styleClass="lbl-title" text="ចំនួនអ្នកចុះឈ្មោះតាមភេទ" />
                </children></VBox>
-            <VBox fx:id="paneBookByCat" layoutX="302.0" prefHeight="500.0" prefWidth="290.0" style="-fx-border-color: #e3e3e3; -fx-border-radius: 0 0 10 10;">
+            <VBox fx:id="paneBookByCat" layoutX="302.0" prefHeight="500.0" prefWidth="290.0" style="-fx-border-color: #d5dbde; -fx-border-radius: 0 0 10 10; -fx-border-width: 1 2 2 2;">
                <children>
-                  <Label alignment="CENTER" styleClass="lbl-title" text="ចំនួនសៀវភៅតាមប្រភេទ">
+                  <Label alignment="CENTER" prefWidth="288.0" styleClass="lbl-title" text="ចំនួនសៀវភៅតាមប្រភេទ">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin></Label>
                </children></VBox>
-            <VBox fx:id="paneBookBorrowing" alignment="TOP_CENTER" layoutX="604.0" prefHeight="500.0" prefWidth="290.0" style="-fx-border-radius: 0 0 10 10; -fx-border-color: #e3e3e3;">
+            <VBox fx:id="paneBookBorrowing" alignment="TOP_CENTER" layoutX="604.0" prefHeight="500.0" prefWidth="290.0" style="-fx-border-radius: 0 0 10 10; -fx-border-color: #d5dbde; -fx-border-width: 1 2 2 2;">
                <children>
                   <Label alignment="CENTER" styleClass="lbl-title" text="ចំនួនសៀវភៅដែលកំពុងខ្ចី" />
                </children></VBox>

@@ -28,7 +28,7 @@ and open the template in the editor.
 }
 .table-row-cell:hover{
     -fx-cursor: hand;
-    -fx-text-background-color:orange;
+    -fx-text-background-color:#f90871;
 }
 
 /*.table-row-cell:selected{
@@ -41,7 +41,7 @@ and open the template in the editor.
     -fx-cursor: hand;
      -fx-font-size: 16px;
     -fx-font-family:"Nokora";
-    -fx-border-color: black;
+    -fx-border-color: #00a0e5;
     -fx-padding: -2 0 3 0;
     -fx-background-insets: 0px;
     -fx-background-color: white;
@@ -93,10 +93,11 @@ and open the template in the editor.
     -fx-font-size: 17px;
     -fx-font-weight: bold;
     -fx-pref-width:400;
-    -fx-border-color:  #e3e3e3;
+    -fx-pref-height:40;
+    -fx-border-color:  #d5dbde ;
     -fx-border-radius: 0 0 10 10;
-    -fx-border-width: 0 1 1 1;
-    -fx-text-fill: #616161;
+    -fx-border-width: 1 2 2 2 ;
+    -fx-text-fill: #ff8264;
 }
 
 

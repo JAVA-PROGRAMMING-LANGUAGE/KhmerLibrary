@@ -158,6 +158,7 @@ public class RegisterController implements Initializable {
             pst.setString(8, txtProvince.getText().trim());
             pst.setString(9, txtPhone.getText().trim());
             pst.executeUpdate();
+            clearInputField();
             loadMember();
             new InfoDialog().show("ចុះឈ្មោះ", "ការចុះឈ្មោះបានជោគជ័យ។");
         } catch (SQLException ex) {
