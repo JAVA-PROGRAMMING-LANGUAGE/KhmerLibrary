@@ -67,7 +67,6 @@ public class AddMaterialController implements Initializable {
     private PreparedStatement pst = null;
     private ResultSet rs = null;
 
-
     /**
      * Initializes the controller class.
      */
@@ -78,6 +77,7 @@ public class AddMaterialController implements Initializable {
         loadMaterial();
         getSelectedRowData();
     }
+
     private void initTable() {
         cId.setCellValueFactory(new PropertyValueFactory("id"));
         cName.setCellValueFactory(new PropertyValueFactory("name"));
@@ -97,17 +97,13 @@ public class AddMaterialController implements Initializable {
                 materialList.add(new Material(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), rs.getString(5), rs.getString(6)));
             }
             tblMaterial.getItems().setAll(materialList);
+            rs.close();
+            pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                rs.close();
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
+
     private void getSelectedRowData() {
         tblMaterial.setOnMouseClicked(e -> {
             if (tblMaterial.getSelectionModel().getSelectedItem() != null) {
@@ -136,6 +132,7 @@ public class AddMaterialController implements Initializable {
     private Boolean isEmptyField() {
         return txtName.getText().trim().equals("") || !parseNum(txtQty.getText().trim(), txtPrice.getText().trim());
     }
+
     @FXML
     private void clickSave(MouseEvent event) {
         if (!isEmptyField()) {
@@ -162,16 +159,12 @@ public class AddMaterialController implements Initializable {
             new InfoDialog().show("រក្សាទុក", "ការរក្សាទុកបានជោគជ័យ។");
             clearInputField();
             loadMaterial();
+            pst.close();
         } catch (SQLException ex) {
             new InfoDialog().show("ការរក្សាទុកមានបញ្ហា", ex.getMessage());
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
+
     private void update() {
         int id = tblMaterial.getSelectionModel().getSelectedItem().getId();
         try {
@@ -187,20 +180,17 @@ public class AddMaterialController implements Initializable {
             new InfoDialog().show("កែប្រែ", "ការកែប្រែបានជោគជ័យ។");
             clearInputField();
             loadMaterial();
+            pst.close();
         } catch (SQLException ex) {
             new InfoDialog().show("ការកែប្រែមានបញ្ហា", ex.getMessage());
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
+
     @FXML
     private void clickNew(MouseEvent event) {
         clearInputField();
     }
+
     private void clearInputField() {
         txtName.setText("");
         txtPrice.setText("");
@@ -248,14 +238,9 @@ public class AddMaterialController implements Initializable {
             new InfoDialog().show("លុបទិន្នន័យ", "ការលុបបានជោគជ័យ។");
             clearInputField();
             loadMaterial();
+            pst.close();
         } catch (SQLException ex) {
             new InfoDialog().show("លុបទិន្នន័យ", ex.getMessage());
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 

@@ -140,28 +140,6 @@
                               <Insets left="80.0" />
                            </padding>
                         </Button>
-                        <Separator layoutX="10.0" layoutY="172.0" opacity="0.5" prefWidth="200.0">
-                           <padding>
-                              <Insets left="122.0" right="55.0" />
-                           </padding>
-                        </Separator>
-                        <Button alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#viewHelpClick" prefHeight="40.0" prefWidth="336.0" style="-fx-border-color: white; -fx-background-color: white;" text="មើលជំនួយ" textFill="#616161">
-                           <font>
-                              <Font name="NiDA Bayon" size="17.0" />
-                           </font>
-                           <graphic>
-                              <MaterialIconView fill="#ffb200" glyphName="WB_INCANDESCENT" size="28" />
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <padding>
-                              <Insets left="80.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </Button>
                         <Separator opacity="0.5" prefWidth="200.0">
                            <padding>
                               <Insets left="122.0" right="55.0" />
@@ -209,15 +187,15 @@
                            <font>
                               <Font name="NiDA Bayon" size="17.0" />
                            </font>
-                           <graphic>
-                              <MaterialIconView fill="TEAL" glyphName="INFO" size="25" />
-                           </graphic>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                            <padding>
                               <Insets left="80.0" />
                            </padding>
+                           <graphic>
+                              <MaterialIconView fill="#ffb200" glyphName="WB_INCANDESCENT" size="28" />
+                           </graphic>
                         </Button>
                         <Separator layoutX="10.0" layoutY="365.0" opacity="0.5" prefWidth="200.0">
                            <padding>

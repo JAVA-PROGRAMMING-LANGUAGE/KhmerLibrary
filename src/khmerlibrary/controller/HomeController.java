@@ -7,9 +7,7 @@ package khmerlibrary.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -17,9 +15,6 @@ import javafx.scene.layout.VBox;
  * @author SRUN VANNARA
  */
 public class HomeController implements Initializable {
-
-    @FXML
-    private VBox vbRegisterMember;
 
     /**
      * Initializes the controller class.

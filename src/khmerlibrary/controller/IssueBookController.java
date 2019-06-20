@@ -84,7 +84,6 @@ public class IssueBookController implements Initializable {
     private PreparedStatement pst = null;
     private ResultSet rs = null;
 
-
     /**
      * Initializes the controller class.
      */
@@ -134,15 +133,10 @@ public class IssueBookController implements Initializable {
                     memberList.add(new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
                 }
                 tblMember.getItems().setAll(memberList);
+                rs.close();
+                pst.close();
             } catch (SQLException ex) {
                 Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                try {
-                    rs.close();
-                    pst.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-                }
             }
         }
     }
@@ -169,21 +163,16 @@ public class IssueBookController implements Initializable {
                     bookList.add(new Book(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
                 }
                 tblBook.getItems().setAll(bookList);
+                rs.close();
+                pst.close();
             } catch (SQLException ex) {
                 Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                try {
-                    rs.close();
-                    pst.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-                }
             }
         } else {
-
             new InfoDialog().show("ស្វែងរកសៀវភៅ", "មិនអាចស្វែងរកសៀវភៅបានឡើយ។\nសូមជ្រើសរើសអ្នកដែលចង់ឱ្យខ្ចីសៀវភៅជាមុនសិន។");
         }
     }
+
     private void getSelectedRowData() {
         tblMember.setOnMouseClicked(e -> {
             if (tblMember.getSelectionModel().getSelectedItem() != null) {
@@ -233,7 +222,7 @@ public class IssueBookController implements Initializable {
                 txtSearchBook.setEditable(false);
                 txtSearchBook.setText("");
                 tblBook.setDisable(true);
-                System.out.println("=2books");
+                // System.out.println("=2books");
 
             } else {
                 iconInfo.setStyle("-fx-fill:#4c787e");
@@ -242,17 +231,13 @@ public class IssueBookController implements Initializable {
                 txtSearchBook.setEditable(true);
                 tblBook.setDisable(false);
             }
+            rs.close();
+            pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                rs.close();
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
+
     @FXML
     private void clickIssue(MouseEvent event) {
         Button close = new Button("ទេ");
@@ -274,6 +259,7 @@ public class IssueBookController implements Initializable {
         });
         dialog.show();
     }
+
     private void issueBook() throws NumberFormatException {
         int mId = tblMember.getSelectionModel().getSelectedItem().getM_id();
         String bId = tblBook.getSelectionModel().getSelectedItem().getB_id();
@@ -290,14 +276,9 @@ public class IssueBookController implements Initializable {
             btnIssue.setVisible(false);
             lblDate.setVisible(false);
             new InfoDialog().show("ឱ្យខ្ចីសៀវភៅ", "បានឱ្យខ្ចីសៀវភៅដោយជោគជ័យ។");
+            pst.close();
         } catch (SQLException ex) {
             new InfoDialog().show("ឱ្យខ្ចីសៀវភៅ", "សៀវភៅនេះបានខ្ចីរួចហើយ មិនអាចឱ្យខ្ចីម្ដងទៀតទេ។");
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 }

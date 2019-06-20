@@ -41,7 +41,7 @@ and open the template in the editor.
     -fx-cursor: hand;
      -fx-font-size: 16px;
     -fx-font-family:"Nokora";
-    -fx-border-color: #00a0e5;
+    -fx-border-color: grey;
     -fx-padding: -2 0 3 0;
     -fx-background-insets: 0px;
     -fx-background-color: white;
@@ -49,8 +49,8 @@ and open the template in the editor.
 }
 
 .button:hover {
-    -fx-background-color: #e3e3e3;
-    -fx-text-fill: black;
+    -fx-background-color:  #FF1744;
+    -fx-text-fill: white;
     -fx-background-insets: 0px;
     -fx-border-color: darkgray;
     -fx-border-width: 1px;
@@ -88,6 +88,10 @@ and open the template in the editor.
     -fx-font-family:"Nokora";
     -fx-text-fill: #616161;
 }
+.label.about{
+    -fx-text-fill: whitesmoke;
+}
+
 
 .lbl-title{
     -fx-font-size: 17px;

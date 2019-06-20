@@ -5,10 +5,6 @@
  */
 package khmerlibrary.controller;
 
-import animatefx.animation.FadeInDownBig;
-import animatefx.animation.SlideInDown;
-import animatefx.animation.SlideInRight;
-import animatefx.animation.SlideInUp;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import java.io.IOException;
@@ -17,6 +13,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,6 +33,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import khmerlibrary.DbConnection;
 import khmerlibrary.InfoDialog;
+import khmerlibrary.animate.SlideInDown;
+import khmerlibrary.animate.SlideInUp;
+import khmerlibrary.prohibitDialog;
 
 /**
  * FXML Controller class
@@ -54,32 +56,21 @@ public class MainController implements Initializable {
     private ResultSet rs = null;
 
     Parent registerPane, addBookPane, issueBookPane, retunBookPane, addMaterialPane;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         conn = DbConnection.connect();
-        loadUI();
+
         this.stackPane = mainPane;
         login();
     }
 
-    void loadUI() {
-        try {
-            registerPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/Register.fxml"));
-            addBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/AddBook.fxml"));
-            issueBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/IssueBook.fxml"));
-            retunBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/ReturnBook.fxml"));
-            addMaterialPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/AddMaterial.fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
     @FXML
     private void RegisterClick(MouseEvent event) throws IOException {
-
+        Parent registerPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/Register.fxml"));
         borderPane.setCenter(registerPane);
         new SlideInDown(registerPane).play();
 
@@ -87,28 +78,28 @@ public class MainController implements Initializable {
 
     @FXML
     private void addBookClick(MouseEvent event) throws IOException {
-
+        Parent addBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/AddBook.fxml"));
         borderPane.setCenter(addBookPane);
         new SlideInUp(addBookPane).play();
     }
 
     @FXML
     private void issueBookClick(MouseEvent event) throws IOException {
-
+        Parent issueBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/IssueBook.fxml"));
         borderPane.setCenter(issueBookPane);
         new SlideInUp(issueBookPane).play();
     }
 
     @FXML
     private void returnBookClick(MouseEvent event) throws IOException {
-
+        Parent retunBookPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/ReturnBook.fxml"));
         borderPane.setCenter(retunBookPane);
         new SlideInDown(retunBookPane).play();
     }
 
     @FXML
     private void addMaterialClick(MouseEvent event) throws IOException {
-
+        Parent addMaterialPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/AddMaterial.fxml"));
         borderPane.setCenter(addMaterialPane);
         new SlideInDown(addMaterialPane).play();
     }
@@ -117,14 +108,13 @@ public class MainController implements Initializable {
     private void viewStatisticClick(MouseEvent event) throws IOException {
         Parent viewStatistic = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/ViewStatistic.fxml"));
         borderPane.setCenter(viewStatistic);
-        new SlideInRight(viewStatistic).play();
+        new SlideInUp(viewStatistic).play();
     }
 
-    @FXML
     private void viewHelpClick(MouseEvent event) throws IOException {
         Parent help = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/help.fxml"));
         borderPane.setCenter(help);
-        new FadeInDownBig(help).play();
+        new SlideInDown(help).play();
     }
 
     @FXML
@@ -167,16 +157,11 @@ public class MainController implements Initializable {
                 } else {
                     updatePwd(txtNewPass.getText());
                 }
+                rs.close();
+                pst.close();
 
             } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                try {
-                    rs.close();
-                    pst.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new InfoDialog().show("មានបញ្ហា", ex.getMessage());
             }
 
             dialog.close();
@@ -191,14 +176,9 @@ public class MainController implements Initializable {
             pst.setString(1, pwd);
             pst.executeUpdate();
             new InfoDialog().show("ប្ដូរពាក្យសម្ងាត់", "ពាក្យសម្ងាត់ត្រូវបានប្ដូរ។\nនៅពេលបើកកម្មវិធីលើកក្រោយត្រូវវាយពាក្យសម្ងាត់ថ្មីនេះ។");
+            pst.close();
         } catch (SQLException ex) {
-            Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            new InfoDialog().show("មានបញ្ហា", ex.getMessage());
         }
     }
 
@@ -232,19 +212,16 @@ public class MainController implements Initializable {
                 rs = pst.executeQuery();
                 if (rs.next()) {
                     dialog.close();
+                    evaluateDate();
                 } else {
                     txtPwd.setPromptText("ពាក្យសម្ងាត់មិនត្រឹមត្រូវ!");
                     txtPwd.setText("");
                 }
+
+                rs.close();
+                pst.close();
             } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                try {
-                    rs.close();
-                    pst.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new InfoDialog().show("មានបញ្ហា", ex.getMessage());
             }
         });
         dialog.show();
@@ -253,19 +230,29 @@ public class MainController implements Initializable {
             borderPane.setCenter(homePane);
             new SlideInUp(homePane).play();
         } catch (IOException ex) {
-            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+            new InfoDialog().show("មានបញ្ហា", ex.getMessage());
         }
     }
 
-    @FXML
-    private void aboutClick(MouseEvent event) {
+    //alert ofter trial
+    private void evaluateDate() {
         try {
-            Parent aboutPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/About.fxml"));
-            borderPane.setCenter(aboutPane);
-            new SlideInDown(aboutPane).play();
-        } catch (IOException ex) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date alertDate = sdf.parse("2019-06-26");
+            Date blockDate = sdf.parse("2019-06-28");
+            Date currentDate = new Date();
+            if (currentDate.compareTo(blockDate) > 0) {
+                new prohibitDialog().show("ចំណាំ", "លោកអ្នកមិនអាចប្រើកម្មវិធីនេះទៀតបានឡើយ។\n"
+                        + "សូមទាក់ទងទិញកម្មវិធីនេះតាមលេខទូរសព្ទ ០១០ ៨៣២ ០០៥។");
+                return;
+            }
+            if (currentDate.compareTo(alertDate) > 0) {
+                new InfoDialog().show("ចំណាំ", "សូមទាក់ទងទិញកម្មវិធីនេះតាមលេខទូរសព្ទ ០១០ ៨៣២ ០០៥។");
+            }
+        } catch (ParseException ex) {
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     @FXML
@@ -287,6 +274,17 @@ public class MainController implements Initializable {
             Platform.exit();
         });
         dialog.show();
+    }
+
+    @FXML
+    private void aboutClick(MouseEvent event) {
+        try {
+            Parent aboutPane = FXMLLoader.load(getClass().getResource("/khmerlibrary/view/About.fxml"));
+            borderPane.setCenter(aboutPane);
+            new SlideInDown(aboutPane).play();
+        } catch (IOException ex) {
+            new InfoDialog().show("មានបញ្ហា", ex.getMessage());
+        }
     }
 
 }

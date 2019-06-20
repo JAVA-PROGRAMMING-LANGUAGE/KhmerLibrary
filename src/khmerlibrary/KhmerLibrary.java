@@ -6,6 +6,7 @@
 package khmerlibrary;
 
 import java.io.IOException;
+import java.text.ParseException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,7 +21,7 @@ import javafx.stage.Stage;
 public class KhmerLibrary extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException, ParseException {
         Parent root = FXMLLoader.load(getClass().getResource("view/MainForm.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("YCODE LIBRARY");
@@ -29,6 +30,7 @@ public class KhmerLibrary extends Application {
         Image img = new Image("khmerlibrary/resource/logo.png");
         stage.getIcons().add(img);
         stage.show();
+
     }
 
     /**
@@ -36,7 +38,7 @@ public class KhmerLibrary extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-        
+
     }
 
 }

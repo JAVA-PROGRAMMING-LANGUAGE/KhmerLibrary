@@ -104,7 +104,7 @@
                   <Label text="" />
                </placeholder>
                <columns>
-                  <TableColumn fx:id="cId" prefWidth="75.0" text="លេខសម្គាល់" />
+                  <TableColumn fx:id="cId" maxWidth="0.0" minWidth="0.0" prefWidth="0.0" text="លេខសម្គាល់" />
                   <TableColumn fx:id="cName" prefWidth="75.0" text="ឈ្មោះសម្ភារ" />
                   <TableColumn fx:id="cPrice" prefWidth="75.0" text="តម្លៃ" />
                   <TableColumn fx:id="cNum" prefWidth="75.0" text="ចំនួន" />

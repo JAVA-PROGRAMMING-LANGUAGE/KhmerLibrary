@@ -41,7 +41,7 @@
                   <Font name="Kh System" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtId" editable="false" layoutX="110.0" prefHeight="25.0" prefWidth="250.0">
+            <TextField fx:id="txtId" editable="false" layoutX="110.0" prefHeight="25.0" prefWidth="250.0" promptText="(លេខស្វ័យប្រវត្តិ)">
                <font>
                   <Font size="15.0" />
                </font>

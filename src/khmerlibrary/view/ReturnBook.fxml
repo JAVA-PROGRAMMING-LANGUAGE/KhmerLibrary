@@ -72,7 +72,7 @@
                   <Font name="Kh System" size="14.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="189.0" layoutY="343.0" prefHeight="35.0" prefWidth="369.0" style="-fx-background-color: #8b8d79; -fx-text-fill: white; -fx-background-radius: 20;" text="បញ្ជីសៀវភៅដែលបានខ្ចី">
+            <Label alignment="CENTER" layoutX="189.0" layoutY="335.0" prefHeight="36.0" prefWidth="369.0" style="-fx-background-color: orange; -fx-text-fill: white; -fx-background-radius: 20;" text="បញ្ជីសៀវភៅដែលបានខ្ចី">
                <font>
                   <Font name="Kh System" size="14.0" />
                </font>

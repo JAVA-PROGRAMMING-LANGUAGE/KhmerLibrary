@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" fillWidth="false" stylesheets="@../resource/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" fillWidth="false" stylesheets="@../resource/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="khmerlibrary.controller.AboutController">
    <children>
       <Label alignment="TOP_CENTER" styleClass="lbl-title" text="អំពីកម្មវិធី" textAlignment="CENTER">
          <VBox.margin>
@@ -26,33 +26,33 @@
             <DropShadow blurType="GAUSSIAN" color="#868686" />
          </effect>
       </ImageView>
-      <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="550.0" style="-fx-background-color: #fce4ec; -fx-background-radius: 10;">
+      <VBox fx:id="paneAbout1" alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="550.0" style="-fx-background-color: #00796B; -fx-background-radius: 15;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
             <HBox>
                <children>
-                  <Label text="កម្មវិធីគ្រប់គ្រងបណ្ណាល័យនេះត្រូវបានបង្កើតឡើងដោយ វ៉ាយកូដ">
+                  <Label styleClass="about" text="កម្មវិធីគ្រប់គ្រងបណ្ណាល័យនេះត្រូវបានបង្កើតឡើងដោយលោក ស៊្រុន វណ្ណារ៉ា">
                      <font>
                         <Font name="Khmer OS" size="14.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <Label text="សរសេរចប់នៅថ្ងៃសុក្រ ១៣រោច ខែពិសាក ឆ្នាំកុរ ឯកស័ក ពុទ្ធសករាជ ២៥៦៣" wrapText="true">
+            <Label styleClass="about" text="សរសេរចប់នៅថ្ងៃសុក្រ ១៣រោច ខែពិសាក ឆ្នាំកុរ ឯកស័ក ពុទ្ធសករាជ ២៥៦៣" wrapText="true">
                <font>
                   <Font name="Khmer OS" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="48.0" layoutY="49.0" text="ត្រូវនឹងថ្ងៃទី៣១ ខែឧសភា ឆ្នាំ២០១៩">
+            <Label layoutX="48.0" layoutY="49.0" styleClass="about" text="កំពង់ចាម ថ្ងៃទី៣១ ខែឧសភា ឆ្នាំ២០១៩">
                <font>
                   <Font name="Khmer OS" size="14.0" />
                </font>
             </Label>
          </children>
          <effect>
-            <DropShadow color="#b5b5b5" />
+            <DropShadow color="#828282" />
          </effect>
          <VBox.margin>
             <Insets bottom="20.0" />
@@ -61,38 +61,38 @@
             <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
          </padding>
       </VBox>
-      <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="550.0" style="-fx-background-color: #fffde7; -fx-background-radius: 10;">
+      <VBox fx:id="paneAbout2" alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="550.0" style="-fx-background-color: #01579B; -fx-background-radius: 15;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
             <HBox>
                <children>
-                  <Label text="កម្មវិធីនេះត្រូវបានសរសេរដោយប្រើភាសាកម្មវិធី JAVA">
+                  <Label styleClass="about" text="កម្មវិធីនេះត្រូវបានសរសេរដោយប្រើភាសាកម្មវិធី Java">
                      <font>
                         <Font name="Khmer OS" size="14.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <Label text="ប្រើប្រព័ន្ធមូលដ្ឋានទិន្ន័យ POSTGRESQL">
+            <Label styleClass="about" text="ប្រើប្រព័ន្ធមូលដ្ឋានទិន្ន័យ Postgresql">
                <font>
                   <Font name="Khmer OS" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="48.0" layoutY="49.0" text="និងប្រើ Library កូដចំហផ្សេងៗទៀត">
+            <Label layoutX="48.0" layoutY="49.0" styleClass="about" text="និងប្រើ Library កូដចំហផ្សេងៗទៀត">
                <font>
                   <Font name="Khmer OS" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="48.0" layoutY="78.0" text="Version 1.0 Beta">
+            <Label layoutX="48.0" layoutY="78.0" styleClass="about" text="Version 1.0 Beta">
                <font>
                   <Font name="Khmer OS" size="14.0" />
                </font>
             </Label>
          </children>
          <effect>
-            <DropShadow color="#b5b5b5" />
+            <DropShadow color="#828282" />
          </effect>
          <VBox.margin>
             <Insets bottom="20.0" />
@@ -101,24 +101,24 @@
             <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
          </padding>
       </VBox>
-      <VBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="550.0" style="-fx-background-color: #ffecb3; -fx-background-radius: 10;">
+      <VBox fx:id="paneAbout3" alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="550.0" style="-fx-background-color: #FF1744; -fx-background-radius: 15;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
-            <Label text="ទាក់ទងអ្នកសរសេរកម្មវិធីនេះរយៈលេខទូរស័ព្ទ: ">
+            <Label styleClass="about" text="ទាក់ទងអ្នកសរសេរកម្មវិធីនេះតាមរយៈលេខទូរសព្ទ: ០១០ ៨៣២ ០០៥ ">
                <font>
                   <Font name="Khmer OS" size="14.0" />
                </font>
             </Label>
-            <Label text="ឬតាមរយៈគណនីហ្វេសប៊ុក: វ៉ាយកូដ YCODE">
+            <Label styleClass="about" text="ឬតាមរយៈទំព័រហ្វេសប៊ុក: វ៉ាយកូដ YCODE">
                <font>
                   <Font name="Khmer OS" size="14.0" />
                </font>
             </Label>
          </children>
          <effect>
-            <DropShadow color="#b5b5b5" />
+            <DropShadow color="#828282" />
          </effect>
          <padding>
             <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />

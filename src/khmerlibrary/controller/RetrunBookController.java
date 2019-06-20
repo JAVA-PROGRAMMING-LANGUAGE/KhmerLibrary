@@ -85,6 +85,7 @@ public class RetrunBookController implements Initializable {
         loadMemberBorrow();
         getSelectedRowMember();
     }
+
     private void initTable() {
         cMid.setCellValueFactory(new PropertyValueFactory("m_id"));
         cName.setCellValueFactory(new PropertyValueFactory("name"));
@@ -111,15 +112,10 @@ public class RetrunBookController implements Initializable {
                 memberList.add(new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
             }
             tblMember.getItems().setAll(memberList);
+            rs.close();
+            pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                rs.close();
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 
@@ -136,15 +132,10 @@ public class RetrunBookController implements Initializable {
                 memberList.add(new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
             }
             tblMember.getItems().setAll(memberList);
+            rs.close();
+            pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                rs.close();
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 
@@ -176,17 +167,13 @@ public class RetrunBookController implements Initializable {
                 bookList.add(new Book(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4)));
             }
             tblBook.getItems().setAll(bookList);
+            rs.close();
+            pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                rs.close();
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
+
     @FXML
     private void clickClear(MouseEvent event) {
         txtSearchMember.setText("");
@@ -225,14 +212,9 @@ public class RetrunBookController implements Initializable {
             pst.setString(2, tblBook.getSelectionModel().getSelectedItem().getB_id());
             pst.executeUpdate();
             loadBookBorrow();
+            pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 
@@ -254,15 +236,10 @@ public class RetrunBookController implements Initializable {
                 memberList.add(new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
             }
             tblMember.getItems().setAll(memberList);
+            rs.close();
+            pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                rs.close();
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 

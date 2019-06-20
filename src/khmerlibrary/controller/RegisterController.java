@@ -92,8 +92,6 @@ public class RegisterController implements Initializable {
     private PreparedStatement pst = null;
     private ResultSet rs = null;
 
-
-
     private void initTable() {
         cId.setCellValueFactory(new PropertyValueFactory("m_id"));
         cName.setCellValueFactory(new PropertyValueFactory("name"));
@@ -106,6 +104,7 @@ public class RegisterController implements Initializable {
         cProvince.setCellValueFactory(new PropertyValueFactory("province"));
         cPhone.setCellValueFactory(new PropertyValueFactory("phone"));
     }
+
     /**
      * Initializes the controller class.
      */
@@ -117,7 +116,6 @@ public class RegisterController implements Initializable {
         loadMember();
         cboGender.getItems().addAll("ប្រុស", "ស្រី");
     }
-
 
     private void showDeleteDialog(String head, String body) {
         int row = tblMember.getSelectionModel().getSelectedIndex();
@@ -144,6 +142,7 @@ public class RegisterController implements Initializable {
         }
 
     }
+
     private void save() {
         try {
             String sql = "INSERT INTO tb_member(name, latin,gender,bd,village,commune,district,province,phone) values(?,?,?,?,?,?,?,?,?)";
@@ -161,14 +160,9 @@ public class RegisterController implements Initializable {
             clearInputField();
             loadMember();
             new InfoDialog().show("ចុះឈ្មោះ", "ការចុះឈ្មោះបានជោគជ័យ។");
+            pst.close();
         } catch (SQLException ex) {
             new InfoDialog().show("ចុះឈ្មោះ", ex.getMessage());
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 
@@ -190,17 +184,11 @@ public class RegisterController implements Initializable {
             clearInputField();
             loadMember();
             new InfoDialog().show("កែប្រែ", "ការកែប្រែបានជោគជ័យ។");
+            pst.close();
         } catch (SQLException ex) {
             new InfoDialog().show("កែប្រែ", ex.getMessage());
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
-
 
     private Boolean isEmptyField() {
         return txtName.getText().trim().equals("") || txtLatin.getText().trim().equals("")
@@ -220,17 +208,13 @@ public class RegisterController implements Initializable {
                 memberList.add(new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10)));
             }
             tblMember.getItems().setAll(memberList);
+            rs.close();
+            pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                rs.close();
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
+
     private void getSelectedRowData() {
         tblMember.setOnMouseClicked(e -> {
             if (tblMember.getSelectionModel().getSelectedItem() != null) {
@@ -249,6 +233,7 @@ public class RegisterController implements Initializable {
             }
         });
     }
+
     @FXML
     private void clickSave(MouseEvent event) {
         if (isEmptyField().equals(false)) {
@@ -261,7 +246,6 @@ public class RegisterController implements Initializable {
             new InfoDialog().show("រក្សាទុក", "សូមបំពេញទិន្នន័យរាល់ចន្លោះនីមួយៗ។");
         }
     }
-
 
     @FXML
     private void clickNew(MouseEvent event) {
@@ -296,15 +280,10 @@ public class RegisterController implements Initializable {
                     memberList.add(new Member(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10)));
                 }
                 tblMember.getItems().setAll(memberList);
+                rs.close();
+                pst.close();
             } catch (SQLException ex) {
                 Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                try {
-                    rs.close();
-                    pst.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-                }
             }
         }
     }
@@ -333,14 +312,9 @@ public class RegisterController implements Initializable {
             clearInputField();
             loadMember();
             new InfoDialog().show("លុបទិន្នន័យ", "ទិន្នន័យត្រូវបានលុប។");
+            pst.close();
         } catch (SQLException ex) {
             new InfoDialog().show("លុបទិន្នន័យ", ex.getMessage());
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 

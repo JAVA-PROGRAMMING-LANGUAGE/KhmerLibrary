@@ -84,8 +84,6 @@ public class AddBookController implements Initializable {
     private PreparedStatement pst = null;
     private ResultSet rs = null;
 
-
-
     /**
      * Initializes the controller class.
      */
@@ -120,17 +118,13 @@ public class AddBookController implements Initializable {
                 bookList.add(new Book(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8)));
             }
             tblBook.getItems().setAll(bookList);
+            rs.close();
+            pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                rs.close();
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
+
     private void loadCategory() {
         String sql = "SELECT cat FROM tb_category";
         ObservableList<String> category = FXCollections.observableArrayList();
@@ -141,15 +135,10 @@ public class AddBookController implements Initializable {
                 category.add(rs.getString(1));
             }
             cboCategory.getItems().setAll(category);
+            rs.close();
+            pst.close();
         } catch (SQLException ex) {
             Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                rs.close();
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
 
     }
@@ -179,6 +168,7 @@ public class AddBookController implements Initializable {
         tblBook.getSelectionModel().clearSelection();
         btnSave.setText("រក្សាទុក");
     }
+
     private void getSelectedRowData() {
         tblBook.setOnMouseClicked(e -> {
             if (tblBook.getSelectionModel().getSelectedItem() != null) {
@@ -217,6 +207,7 @@ public class AddBookController implements Initializable {
             return false;
         }
     }
+
     private Boolean isEmptyField() {
         return txtId.getText().trim().equals("") || txtId.isFocused() || txtTitle.getText().trim().equals("")
                 || cboCategory.getSelectionModel().isEmpty() || !parseInt(txtQty.getText().trim());
@@ -238,14 +229,9 @@ public class AddBookController implements Initializable {
             new InfoDialog().show("រក្សាទុក", "ការរក្សាទុកបានជោគជ័យ។");
             clearInputField();
             loadBook();
+            pst.close();
         } catch (SQLException ex) {
             new InfoDialog().show("មានបញ្ហា!", ex.getMessage());
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 
@@ -265,17 +251,13 @@ public class AddBookController implements Initializable {
             new InfoDialog().show("កែប្រែ", "ការកែប្រែបានជោគជ័យ។");
             clearInputField();
             loadBook();
+            pst.close();
         } catch (SQLException ex) {
             new InfoDialog().show("មានបញ្ហា!", ex.getMessage());
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
 
     }
+
     @FXML
     private void clickNew(MouseEvent event) {
         clearInputField();
@@ -308,15 +290,10 @@ public class AddBookController implements Initializable {
                     bookList.add(new Book(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8)));
                 }
                 tblBook.getItems().setAll(bookList);
+                rs.close();
+                pst.close();
             } catch (SQLException ex) {
                 Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            } finally {
-                try {
-                    rs.close();
-                    pst.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-                }
             }
         }
     }
@@ -341,15 +318,10 @@ public class AddBookController implements Initializable {
                         txtOther.setText(rs.getString(8));
                         btnSave.setText("កែប្រែ");
                     }
+                    rs.close();
+                    pst.close();
                 } catch (SQLException ex) {
                     Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
-                } finally {
-                    try {
-                        rs.close();
-                        pst.close();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
                 }
             }
         });
@@ -377,7 +349,7 @@ public class AddBookController implements Initializable {
             });
             dialog.show();
         }
-}
+    }
 
     private void delete() {
         try {
@@ -388,14 +360,9 @@ public class AddBookController implements Initializable {
             new InfoDialog().show("លុបទិន្នន័យ", "ការលុបបានជោគជ័យ។");
             clearInputField();
             loadBook();
+            pst.close();
         } catch (SQLException ex) {
             new InfoDialog().show("លុបទិន្នន័យ", ex.getMessage());
-        } finally {
-            try {
-                pst.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(RegisterController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
     }
 }
