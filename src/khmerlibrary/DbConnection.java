@@ -14,19 +14,32 @@ import java.sql.SQLException;
  * @author SRUN VANNARA
  */
 public class DbConnection {
-    private static String url = "jdbc:postgresql://localhost/postgres";
-    private static String user = "postgres";
-    private static String pwd = "8899";
-        
+//    private static String url = "jdbc:postgresql://localhost/postgres";
+//    private static String user = "postgres";
+//    private static String pwd = "8899";
+//
+//    public static Connection connect() {
+//        Connection conn = null;
+//            try {
+//                conn = DriverManager.getConnection(url, user, pwd);
+//                //System.out.println("Connected");
+//            } catch (SQLException ex) {
+//                new InfoDialog().show("មានបញ្ហា!", ex.getMessage());
+//        }
+//            return conn;
+//        }
+
+    //private static String user = "postgres";
+    //private static String pwd = "8899";
     public static Connection connect() {
         Connection conn = null;
-            try {
-                conn = DriverManager.getConnection(url, user, pwd);
-                //System.out.println("Connected");
-            } catch (SQLException ex) {
-                new InfoDialog().show("មានបញ្ហា!", ex.getMessage());
+        try {
+            String url = "jdbc:sqlite:D:/library_data/sqlite.db";
+            conn = DriverManager.getConnection(url);
+            //System.out.println("Connected");
+        } catch (SQLException ex) {
+            new InfoDialog().show("មានបញ្ហា!", ex.getMessage());
         }
-            return conn;
-        }
-    
+        return conn;
+    }
 }

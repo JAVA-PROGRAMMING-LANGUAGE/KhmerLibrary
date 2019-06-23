@@ -75,12 +75,12 @@
                   </Label>
                </children>
             </HBox>
-            <Label styleClass="about" text="ប្រើប្រព័ន្ធមូលដ្ឋានទិន្ន័យ Postgresql">
+            <Label layoutX="48.0" layoutY="49.0" styleClass="about" text="និងប្រើ Library កូដចំហផ្សេងៗទៀត">
                <font>
                   <Font name="Khmer OS" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="48.0" layoutY="49.0" styleClass="about" text="និងប្រើ Library កូដចំហផ្សេងៗទៀត">
+            <Label styleClass="about" text="កម្មវិធីដំណើរការត្រឹមត្រូវលុះត្រាតែកាលបរិច្ឆេទកុំព្យូទ័រត្រូវបានកំណត់ត្រឹមត្រូវ">
                <font>
                   <Font name="Khmer OS" size="14.0" />
                </font>

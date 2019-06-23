@@ -212,7 +212,7 @@ public class MainController implements Initializable {
                 rs = pst.executeQuery();
                 if (rs.next()) {
                     dialog.close();
-                    evaluateDate();
+                    //evaluateDate();
                 } else {
                     txtPwd.setPromptText("ពាក្យសម្ងាត់មិនត្រឹមត្រូវ!");
                     txtPwd.setText("");

@@ -195,7 +195,7 @@ public class IssueBookController implements Initializable {
     }
 
     private void loadNumBorrow() throws NumberFormatException {
-        String sql = "SELECT COUNT(*), MAX(CURRENT_DATE-tb_issue.issue_date)  FROM tb_issue WHERE m_id=?";
+        String sql = "SELECT COUNT(*), MAX(JULIANDAY('now')-JULIANDAY(issue_date))  FROM tb_issue WHERE m_id=?";
         btnIssue.setVisible(false);
         try {
             pst = conn.prepareStatement(sql);
@@ -214,7 +214,7 @@ public class IssueBookController implements Initializable {
                 txtSearchBook.setEditable(false);
                 txtSearchBook.setText("");
                 tblBook.setDisable(true);
-                System.out.println(">=14days");
+                //System.out.println(">=14days");
             } else if (count >= 2) {
                 iconInfo.setStyle("-fx-fill:red");
                 lblInfo.setStyle("-fx-text-fill:red");
@@ -222,7 +222,7 @@ public class IssueBookController implements Initializable {
                 txtSearchBook.setEditable(false);
                 txtSearchBook.setText("");
                 tblBook.setDisable(true);
-                // System.out.println("=2books");
+                //System.out.println("=2books");
 
             } else {
                 iconInfo.setStyle("-fx-fill:#4c787e");
@@ -268,7 +268,7 @@ public class IssueBookController implements Initializable {
             pst = conn.prepareStatement(sql);
             pst.setInt(1, mId);
             pst.setString(2, bId);
-            pst.setDate(3, java.sql.Date.valueOf(LocalDate.now()));
+            pst.setString(3, java.sql.Date.valueOf(LocalDate.now()).toString());
             pst.executeUpdate();
             tblMember.getSelectionModel().clearSelection();
             tblBook.getItems().clear();

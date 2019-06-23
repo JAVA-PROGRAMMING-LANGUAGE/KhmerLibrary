@@ -53,6 +53,7 @@ public class viewStatisticController implements Initializable {
         loadBookByCategory();
         loadBookBorrowing();
     }
+
     private void loadMemberByGender() {
         String sql = "SELECT gender, COUNT(m_id) FROM tb_member GROUP BY gender";
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
@@ -103,7 +104,7 @@ public class viewStatisticController implements Initializable {
     }
 
     private void loadBookBorrowing() {
-        String sql = "SELECT COUNT(*), (SELECT COUNT(b_id) FROM tb_issue WHERE CURRENT_DATE-issue_date<14) FROM tb_issue ";
+        String sql = "SELECT COUNT(*), (SELECT COUNT(b_id) FROM tb_issue WHERE JULIANDAY('now')-JULIANDAY(issue_date)<14) FROM tb_issue ";
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
         try {
             pst = conn.prepareStatement(sql);

@@ -7,6 +7,7 @@ package khmerlibrary;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.time.LocalDate;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,7 +31,7 @@ public class KhmerLibrary extends Application {
         Image img = new Image("khmerlibrary/resource/logo.png");
         stage.getIcons().add(img);
         stage.show();
-
+        System.out.println(java.sql.Date.valueOf(LocalDate.now()));
     }
 
     /**
