@@ -124,7 +124,7 @@ public class RetrunBookController implements Initializable {
      */
     private void loadMemberExpire() {
         ObservableList<Member> memberList = FXCollections.observableArrayList();
-        String sql = "SELECT DISTINCT tb_member.m_id,name,latin,gender,phone,issue_date FROM tb_member JOIN tb_issue ON tb_member.m_id=tb_issue.m_id WHERE (CURRENT_DATE-issue_date )>14 ORDER BY issue_date ";
+        String sql = "SELECT DISTINCT tb_member.m_id,name,latin,gender,phone,issue_date FROM tb_member JOIN tb_issue ON tb_member.m_id=tb_issue.m_id WHERE JULIANDAY('now')-JULIANDAY(issue_date)>14 ORDER BY issue_date ";
         try {
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -157,7 +157,7 @@ public class RetrunBookController implements Initializable {
     }
 
     private void loadBookBorrow() {
-        String sql = "SELECT b.b_id, b.title, b.sub_title,(CURRENT_DATE-i.issue_date) FROM tb_book as b INNER JOIN tb_issue as i ON b.b_id=i.b_id WHERE i.m_id=?";
+        String sql = "SELECT b.b_id, b.title, b.sub_title,(JULIANDAY('now')-JULIANDAY(issue_date)) FROM tb_book as b INNER JOIN tb_issue as i ON b.b_id=i.b_id WHERE i.m_id=?";
         ObservableList<Book> bookList = FXCollections.observableArrayList();
         try {
             pst = conn.prepareStatement(sql);

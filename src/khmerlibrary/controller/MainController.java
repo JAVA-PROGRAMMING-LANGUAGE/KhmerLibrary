@@ -212,7 +212,7 @@ public class MainController implements Initializable {
                 rs = pst.executeQuery();
                 if (rs.next()) {
                     dialog.close();
-                    //evaluateDate();
+                    evaluateDate();
                 } else {
                     txtPwd.setPromptText("ពាក្យសម្ងាត់មិនត្រឹមត្រូវ!");
                     txtPwd.setText("");
@@ -238,8 +238,8 @@ public class MainController implements Initializable {
     private void evaluateDate() {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date alertDate = sdf.parse("2019-06-26");
-            Date blockDate = sdf.parse("2019-06-28");
+            Date alertDate = sdf.parse("2019-07-08");
+            Date blockDate = sdf.parse("2019-07-10");
             Date currentDate = new Date();
             if (currentDate.compareTo(blockDate) > 0) {
                 new prohibitDialog().show("ចំណាំ", "លោកអ្នកមិនអាចប្រើកម្មវិធីនេះទៀតបានឡើយ។\n"

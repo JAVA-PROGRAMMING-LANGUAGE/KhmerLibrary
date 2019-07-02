@@ -8,6 +8,7 @@ package khmerlibrary;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import org.sqlite.SQLiteConfig;
 
 /**
  *
@@ -34,8 +35,10 @@ public class DbConnection {
     public static Connection connect() {
         Connection conn = null;
         try {
-            String url = "jdbc:sqlite:D:/library_data/sqlite.db";
-            conn = DriverManager.getConnection(url);
+            String url = "jdbc:sqlite:D:/LibraryData/data.db";
+            SQLiteConfig config = new SQLiteConfig();
+            config.enforceForeignKeys(true);
+            conn = DriverManager.getConnection(url, config.toProperties());
             //System.out.println("Connected");
         } catch (SQLException ex) {
             new InfoDialog().show("មានបញ្ហា!", ex.getMessage());
